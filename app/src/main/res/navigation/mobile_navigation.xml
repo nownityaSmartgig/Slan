@@ -14,10 +14,27 @@
         android:id="@+id/navigation_players"
         android:name="com.slan.admin.ui.fragment.players.AllPlayersFragment"
         android:label="@string/players"
-        tools:layout="@layout/fragment_all_players" />
+        tools:layout="@layout/fragment_all_players" >
+        <action
+            android:id="@+id/action_navigation_players_to_playerPaymentsFragment"
+            app:destination="@id/playerPaymentsFragment" />
+        <action
+            android:id="@+id/action_navigation_players_to_playerDetailsFragment"
+            app:destination="@id/playerDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_teams"
         android:name="com.slan.admin.ui.fragment.teams.AllTeamsFragment"
         android:label="@string/teams"
         tools:layout="@layout/fragment_all_teams" />
+    <fragment
+        android:id="@+id/playerPaymentsFragment"
+        android:name="com.slan.admin.ui.fragment.players.PlayerPaymentsFragment"
+        android:label="fragment_player_payments"
+        tools:layout="@layout/fragment_player_payments" />
+    <fragment
+        android:id="@+id/playerDetailsFragment"
+        android:name="com.slan.admin.ui.fragment.players.PlayerDetailsFragment"
+        android:label="fragment_player_details"
+        tools:layout="@layout/fragment_player_details" />
 </navigation>

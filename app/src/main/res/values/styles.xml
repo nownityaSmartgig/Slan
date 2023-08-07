@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme attributes here -->
+    </style>
+
+    <!-- Style for popups and overlays -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <!-- Customize popup and overlay appearance here -->
+    </style>
+
     <style name="text_heading">
         <item name="android:textSize">15sp</item>
 

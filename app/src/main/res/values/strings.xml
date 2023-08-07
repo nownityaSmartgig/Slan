@@ -7,4 +7,7 @@
     <string name="tournaments">Tournaments</string>
     <string name="teams">Teams</string>
     <string name="menu">Menu</string>
+    <string name="my_teams">My Teams</string>
+    <string name="all_matches">All Matches</string>
+    <string name="personal">Personal</string>
 </resources>

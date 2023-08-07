@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_eventLogo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/ic_logo_event"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_tournament_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="SLAN  E-Sport tournament"
+        android:fontFamily="@font/ubuntu_bold"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_eventLogo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 Jul to 16 Jul 2023"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:textColor="@color/light_gray"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_eventLogo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tournament_name" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Gamepoint, Madhpur"
+        android:layout_marginTop="1dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:textColor="@color/light_gray"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_eventLogo"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_eventLogo"
+        android:layout_marginTop="7dp"
+        android:background="@color/light_gray"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
