@@ -1,2 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <style name="text_heading">
+        <item name="android:textSize">15sp</item>
+
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_details">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="fontFamily">@font/ubuntu_regular</item>
+    </style>
+
+    <style name="all_players_heading_text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">9dp</item>
+        <item name="fontFamily">@font/ubuntu_regular</item>
+        <item name="android:textColor">@color/orange_red</item>
+
+    </style>
+    <style name="all_players_text">
+        <item name="android:textSize">11sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="fontFamily">@font/ubuntu_regular</item>
+    </style>
+
+    <style name="CustomToolbarStyle" parent="Widget.AppCompat.Toolbar" >
+        <item name="titleTextAppearance">@style/ToolbarTitleText</item>
+    </style>
+
+    <style name="ToolbarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title" >
+
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">15sp</item>
+
+    </style>
+
+    <style name="players_detail_heading_text" >
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="players_detail_text" >
+        <item name="android:textColor">@color/orange_red</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="RoundCornerShapeAppearance_25">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">22dp</item>
+    </style>
+
+    <style name="PlayerPaymentsHeadingTextAppearance" >
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/ubuntu_medium</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginStart">12dp</item>
+    </style>
+
+    <style name="PlayerPaymentsTextAppearance" >
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/ubuntu_medium</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
+
+    <style name="AllTeamsHeadingTextAppearance" >
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/orange_red</item>
+        <item name="android:fontFamily">@font/ubuntu_medium</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
+    <style name="AllTeamsTextAppearance" >
+        <item name="android:textSize">11sp</item>
+
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
+
+    </style>
+
+    <style name="TeamMembersHeadingTextAppearanceOrange" >
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/orange_red</item>
+        <item name="android:fontFamily">@font/ubuntu_medium</item>
+        <item name="android:layout_marginTop">12dp</item>
+    </style>
+
+    <style name="TeamMembersTextAppearance" >
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/ubuntu_regular</item>
+    </style>
+
+</resources>

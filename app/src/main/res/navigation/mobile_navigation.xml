@@ -3,23 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_tournament">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.slan.admin.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/navigation_tournament"
+        android:name="com.slan.admin.ui.fragment.tournaments.AllTournamentsFragment"
+        android:label="@string/tournaments"
+        tools:layout="@layout/fragment_all_tournaments" />
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.slan.admin.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
+        android:id="@+id/navigation_players"
+        android:name="com.slan.admin.ui.fragment.players.AllPlayersFragment"
+        android:label="@string/players"
+        tools:layout="@layout/fragment_all_players" />
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.slan.admin.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_teams"
+        android:name="com.slan.admin.ui.fragment.teams.AllTeamsFragment"
+        android:label="@string/teams"
+        tools:layout="@layout/fragment_all_teams" />
 </navigation>
