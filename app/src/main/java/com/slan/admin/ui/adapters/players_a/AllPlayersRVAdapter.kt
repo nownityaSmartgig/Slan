@@ -23,7 +23,7 @@ class AllPlayersRVAdapter :
                 val pos = adapterPosition
                 if (pos != RecyclerView.NO_POSITION) {
                     val player = itemId
-                    Toast.makeText(itemView.context , "$player" , Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(itemView.context , "$player" , Toast.LENGTH_SHORT).show()
                     val action =
                         AllPlayersFragmentDirections.actionNavigationPlayersToPlayerDetailsFragment()
 
@@ -38,7 +38,7 @@ class AllPlayersRVAdapter :
                 if (pos != RecyclerView.NO_POSITION) {
                     val player = itemId
                     val player2 = layoutPosition
-                    Toast.makeText(itemView.context , "$player, $player2" , Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(itemView.context , "$player, $player2" , Toast.LENGTH_SHORT).show()
 
                     val action =
                         AllPlayersFragmentDirections.actionNavigationPlayersToPlayerPaymentsFragment()
@@ -52,18 +52,6 @@ class AllPlayersRVAdapter :
         fun bind(item: AllPlayerListData) {
             binding.tvPlayerName.text = item.playerName
             binding.tvPhoneNumber.text = item.playerNumber
-
-
-//            binding.tvPlayerName.setOnClickListener {
-//                val pos = item.playerName
-//                Toast.makeText(itemView.context , pos , Toast.LENGTH_SHORT).show()
-//
-//
-//            }
-//            binding.tvViewDetails.setOnClickListener {
-//
-//            }
-
 
         }
 

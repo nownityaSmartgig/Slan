@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="12 Jul to 16 Jul 2023"
@@ -42,17 +42,21 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_tournament_name" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="Gamepoint, Madhpur"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/ubuntu_regular"
         android:textColor="@color/light_gray"
         android:textSize="11sp"
         app:layout_constraintStart_toEndOf="@+id/iv_eventLogo"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        />
+
 
     <View
         android:layout_width="match_parent"

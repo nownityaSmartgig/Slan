@@ -7,46 +7,34 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.slan.admin.R
-import com.slan.admin.data.source.local.AllTeamsDataSource
-import com.slan.admin.databinding.FragmentAllTeamsBinding
-import com.slan.admin.ui.adapters.teams_a.AllTeamsRVAdapter
+import com.slan.admin.databinding.FragmentTeamMembersBinding
 
-class AllTeamsFragment : Fragment() {
+class TeamMembersFragment : Fragment() {
 
     companion object {
-        fun newInstance() = AllTeamsFragment()
+        fun newInstance() = TeamMembersFragment()
     }
 
-    private lateinit var viewModel: AllTeamsViewModel
-
-    private lateinit var binding: FragmentAllTeamsBinding
-    private val allTeamsAdapter =AllTeamsRVAdapter()
+    private lateinit var viewModel: TeamMembersViewModel
+    private lateinit var binding: FragmentTeamMembersBinding
 
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentAllTeamsBinding.inflate(inflater , container , false)
+        binding = FragmentTeamMembersBinding.inflate(inflater , container , false)
 
         return binding.root
     }
 
 //    override fun onActivityCreated(savedInstanceState: Bundle?) {
 //        super.onActivityCreated(savedInstanceState)
-//        viewModel = ViewModelProvider(this).get(AllTeamsViewModel::class.java)
+//        viewModel = ViewModelProvider(this).get(TeamMembersViewModel::class.java)
 //        // TODO: Use the ViewModel
 //    }
 
     override fun onViewCreated(view: View , savedInstanceState: Bundle?) {
         super.onViewCreated(view , savedInstanceState)
-
-        val dataSource = AllTeamsDataSource().loadAllTeamsDataSource()
-        binding.rvAllTeamsList.adapter = allTeamsAdapter
-        allTeamsAdapter.submitList(dataSource)
-
-
-
-
 
     }
 

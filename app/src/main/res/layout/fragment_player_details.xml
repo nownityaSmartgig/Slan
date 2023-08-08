@@ -492,6 +492,7 @@
                             android:id="@+id/siv_logo"
                             android:layout_width="44dp"
                             android:layout_height="44dp"
+                            android:scaleType="fitCenter"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="21dp"
                             android:src="@drawable/ic_open_image_logo"
@@ -500,6 +501,7 @@
                             app:shapeAppearanceOverlay="@style/RoundCornerShapeAppearance_25" />
 
                         <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_upload_image"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"

@@ -26,15 +26,41 @@
         android:id="@+id/navigation_teams"
         android:name="com.slan.admin.ui.fragment.teams.AllTeamsFragment"
         android:label="@string/teams"
-        tools:layout="@layout/fragment_all_teams" />
+        tools:layout="@layout/fragment_all_teams" >
+        <action
+            android:id="@+id/action_navigation_teams_to_teamMembersFragment"
+            app:destination="@id/teamMembersFragment" />
+        <action
+            android:id="@+id/action_navigation_teams_to_teamProfileFragment"
+            app:destination="@id/teamProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/playerPaymentsFragment"
         android:name="com.slan.admin.ui.fragment.players.PlayerPaymentsFragment"
-        android:label="fragment_player_payments"
+        android:label="@string/player_payments"
         tools:layout="@layout/fragment_player_payments" />
     <fragment
         android:id="@+id/playerDetailsFragment"
         android:name="com.slan.admin.ui.fragment.players.PlayerDetailsFragment"
-        android:label="fragment_player_details"
+        android:label="@string/player_details"
         tools:layout="@layout/fragment_player_details" />
+    <fragment
+        android:id="@+id/teamMembersFragment"
+        android:name="com.slan.admin.ui.fragment.teams.TeamMembersFragment"
+        android:label="Team Members"
+        tools:layout="@layout/fragment_team_members" >
+        <action
+            android:id="@+id/action_teamMembersFragment_to_addTeamMemberFragment"
+            app:destination="@id/addTeamMemberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamProfileFragment"
+        android:name="com.slan.admin.ui.fragment.teams.TeamProfileFragment"
+        android:label="@string/team_profile"
+        tools:layout="@layout/fragment_team_profile" />
+    <fragment
+        android:id="@+id/addTeamMemberFragment"
+        android:name="com.slan.admin.ui.fragment.teams.AddTeamMemberFragment"
+        android:label="@string/add_team_member"
+        tools:layout="@layout/fragment_add_team_member" />
 </navigation>

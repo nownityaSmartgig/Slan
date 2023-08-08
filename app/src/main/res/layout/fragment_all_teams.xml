@@ -1,13 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.teams.AllTeamsFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        app:layout_constraintGuide_percent="0.50"
+        android:orientation="vertical"/>
 
-</FrameLayout>
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/sv_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_outline_search_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Search" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_types_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sv_search"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="All"
+        android:textSize="15sp"
+        android:drawablePadding="8dp"
+        android:drawableEnd="@drawable/ic_down_arrow_orange"
+        android:textColor="@color/black"
+        android:fontFamily="@font/ubuntu_medium"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_sports_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/guideline_1"
+        app:layout_constraintTop_toBottomOf="@id/sv_search"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Sport"
+        android:textSize="15sp"
+        android:drawablePadding="8dp"
+        android:drawableEnd="@drawable/ic_down_arrow_orange"
+        android:textColor="@color/black"
+        android:fontFamily="@font/ubuntu_medium"
+        />
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_periwinkle"
+        app:layout_constraintTop_toBottomOf="@id/tv_types_filter"
+        android:layout_marginTop="11dp"
+        android:layout_marginHorizontal="20dp"
+
+        />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_1"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/view_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            >
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                app:layout_constraintGuide_begin="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="126dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="275dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_team_name_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Team Name"
+                style="@style/AllTeamsHeadingTextAppearance"
+                app:layout_constraintStart_toEndOf="@id/guideline_2"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_team_owner_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Team Owner"
+                style="@style/AllTeamsHeadingTextAppearance"
+                app:layout_constraintStart_toEndOf="@id/guideline_3"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_sports_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sport"
+                app:layout_constraintStart_toEndOf="@id/guideline_4"
+                style="@style/AllTeamsHeadingTextAppearance"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/light_periwinkle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_team_name_heading"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="7dp"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_all_teams_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_2"
+                tools:itemCount="5"
+                app:layoutManager="LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:listitem="@layout/rv_layout_list_all_teams" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

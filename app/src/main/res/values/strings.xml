@@ -10,4 +10,8 @@
     <string name="my_teams">My Teams</string>
     <string name="all_matches">All Matches</string>
     <string name="personal">Personal</string>
+    <string name="player_payments">Player Payments</string>
+    <string name="player_details">Player Details</string>
+    <string name="team_profile">Team Profile</string>
+    <string name="add_team_member">Add Team Member</string>
 </resources>

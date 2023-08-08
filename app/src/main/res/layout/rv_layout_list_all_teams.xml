@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="126dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="275dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="333dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_team_name"
+            style="@style/AllTeamsTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:text="Team Name"
+            android:textColor="@color/jelly_bean_blue"
+            app:layout_constraintBottom_toTopOf="@id/view_1"
+            app:layout_constraintEnd_toStartOf="@id/guideline_2"
+            app:layout_constraintStart_toEndOf="@id/guideline_1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_team_owner_name"
+            style="@style/AllTeamsTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:text="Yaswanth Sai Palaghat"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tv_team_owner_number"
+            app:layout_constraintEnd_toStartOf="@id/guideline_3"
+            app:layout_constraintStart_toEndOf="@id/guideline_2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginTop="4dp"
+
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_team_owner_number"
+            style="@style/AllTeamsTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="7894561233"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_3"
+            app:layout_constraintStart_toEndOf="@id/guideline_2"
+            app:layout_constraintTop_toBottomOf="@id/tv_team_owner_name" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_sports_logo"
+            style="@style/AllTeamsTextAppearance"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/cricket_logo"
+            android:text="Sport"
+            app:layout_constraintBottom_toTopOf="@id/view_1"
+            app:layout_constraintStart_toEndOf="@id/guideline_3"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_bt_history"
+            style="AllTeamsTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_button_ripple_orange"
+            android:fontFamily="@font/ubuntu_medium"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="7dp"
+            android:text="History"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@id/view_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/light_periwinkle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
