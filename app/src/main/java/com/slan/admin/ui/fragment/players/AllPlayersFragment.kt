@@ -53,6 +53,8 @@ class AllPlayersFragment : Fragment() {
         allPlayerAdapter.submitList(originalPlayerList)
 
 
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu , inflater: MenuInflater) {

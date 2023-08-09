@@ -1,13 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.teams.TeamProfileFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="0dp"
 
-</FrameLayout>
+
+        >
+
+        <View
+            android:id="@+id/view_1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/orange_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_team_logo"
+            android:layout_width="132dp"
+            android:layout_height="132dp"
+            android:src="@drawable/ic_clan_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/view_1"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:text="@string/night_highlanders_legends"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_team_logo" />
+
+        <TextView
+            android:id="@+id/tv_past_matches"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:alpha="0.90"
+            android:background="#D9D9D9"
+            android:fontFamily="@font/ubuntu_regular"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:text="@string/past_matches"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_1" />
+
+
+        <!--From Date-->
+        <TextView
+            android:id="@+id/tv_from_date_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="@string/from_date"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/rl_from"
+            app:layout_constraintStart_toStartOf="@id/rl_from" />
+
+        <RelativeLayout
+            android:id="@+id/rl_from"
+            android:layout_width="148dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/ic_outline_light_rectangle"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_past_matches"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_date_from"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:maxLines="1"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@id/iv_calendar1"
+                android:fontFamily="@font/ubuntu_regular"
+                android:gravity="center_vertical"
+                android:paddingStart="2dp"
+                android:hint="@string/default_date"
+                android:textColorHint="@color/light_periwinkle"
+                android:textColor="@color/black"
+                android:textSize="9sp"
+                tools:ignore="SmallSp" />
+
+            <ImageView
+                android:id="@+id/iv_calendar1"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="11dp"
+
+                android:src="@drawable/ic_calendar_orange"
+                android:contentDescription="@string/calendar" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_from_to_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="@string/to_date"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/rl_to"
+            app:layout_constraintStart_toStartOf="@id/rl_to" />
+
+        <RelativeLayout
+            android:id="@+id/rl_to"
+            android:layout_width="148dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_outline_light_rectangle"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_past_matches"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_date_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@id/iv_calendar2"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:gravity="center_vertical"
+                android:paddingStart="2dp"
+                android:hint="@string/default_date"
+                android:textColorHint="@color/light_periwinkle"
+                android:textColor="@color/black"
+                android:textSize="9sp"
+                tools:ignore="RtlSymmetry,SmallSp" />
+
+            <ImageView
+                android:id="@+id/iv_calendar2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="11dp"
+
+                android:src="@drawable/ic_calendar_orange"
+                android:contentDescription="@string/calendar" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_team_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="16dp"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_from"
+            tools:itemCount="2"
+            tools:listitem="@layout/rv_layout_past_matches"
+
+
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="40dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="15dp"
+            android:layout_marginBottom="20dp"
+            app:backgroundTint="@color/orange_red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_team_profile"
+
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

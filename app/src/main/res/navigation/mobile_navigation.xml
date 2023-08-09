@@ -62,5 +62,17 @@
         android:id="@+id/addTeamMemberFragment"
         android:name="com.slan.admin.ui.fragment.teams.AddTeamMemberFragment"
         android:label="@string/add_team_member"
-        tools:layout="@layout/fragment_add_team_member" />
+        tools:layout="@layout/fragment_add_team_member" >
+        <action
+            android:id="@+id/action_addTeamMemberFragment_to_teamMembersFragment"
+            app:destination="@id/teamMembersFragment"
+            app:popUpTo="@id/teamMembersFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="com.slan.admin.ui.fragment.menu.MenuFragment"
+        android:label="@string/menu"
+        tools:layout="@layout/fragment_menu" />
 </navigation>

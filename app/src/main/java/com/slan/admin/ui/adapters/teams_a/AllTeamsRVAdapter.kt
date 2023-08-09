@@ -74,7 +74,7 @@ class AllTeamsRVAdapter: ListAdapter<AllTeamsListData, AllTeamsRVAdapter.AllTeam
 
 }
 
-class AllTeamsDiffCallBack:DiffUtil.ItemCallback<AllTeamsListData>() {
+class AllTeamsDiffCallBack : DiffUtil.ItemCallback<AllTeamsListData>() {
     override fun areItemsTheSame(oldItem: AllTeamsListData , newItem: AllTeamsListData): Boolean {
         return oldItem.teamName == newItem.teamName
     }

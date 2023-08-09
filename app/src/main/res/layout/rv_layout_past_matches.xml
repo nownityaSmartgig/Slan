@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="1dp"
+
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="0dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_rectangle_outline">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_team_one_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxWidth="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="9dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/ubuntu_medium"
+                android:maxLines="1"
+
+                android:text="Sunrisers"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_team_one_tick"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_tick_orange"
+                app:layout_constraintBottom_toBottomOf="@id/tv_team_one_name"
+                app:layout_constraintStart_toEndOf="@id/tv_team_one_name"
+                app:layout_constraintTop_toTopOf="@id/tv_team_one_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_vs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="VS"
+                android:textColor="@color/orange_red"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/tv_team_one_name"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_team_two_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/ubuntu_medium"
+                android:maxLines="1"
+                android:maxWidth="120dp"
+                android:text="Star walkers"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/tv_vs"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_team_two_tick"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_tick_orange"
+                app:layout_constraintBottom_toBottomOf="@id/tv_team_two_name"
+                app:layout_constraintStart_toEndOf="@id/tv_team_two_name"
+                app:layout_constraintTop_toTopOf="@id/tv_team_two_name"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_game_num_and_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light_gray"
+                android:text="12 Game, Group A"
+                android:textSize="12sp"
+                android:maxWidth="200dp"
+                android:fontFamily="@font/ubuntu_regular"
+                app:layout_constraintTop_toBottomOf="@id/tv_team_one_name"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="9dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_game_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light_gray"
+                android:text="Gamepoint Madhapur"
+                android:textSize="12sp"
+                android:maxWidth="200dp"
+                android:fontFamily="@font/ubuntu_bold"
+                app:layout_constraintTop_toBottomOf="@id/tv_game_num_and_group"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="9dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_game_date_and_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light_gray"
+                android:text="Wed, 14 Jun 2023-06:00 AM/Local"
+                android:textSize="11sp"
+                android:fontFamily="@font/ubuntu_bold"
+                app:layout_constraintTop_toBottomOf="@id/tv_game_location"
+                android:layout_marginTop="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="9dp"
+                />
+
+            <include android:id="@+id/layout_match_score_table"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="13dp"
+                layout="@layout/layout_score_table_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_1"
+                app:layout_constraintTop_toBottomOf="@id/tv_team_two_name"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

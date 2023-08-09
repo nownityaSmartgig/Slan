@@ -14,4 +14,53 @@
     <string name="player_details">Player Details</string>
     <string name="team_profile">Team Profile</string>
     <string name="add_team_member">Add Team Member</string>
+
+
+    <string name="title_players">Players</string>
+    <string name="title_tournaments">Tournaments</string>
+    <string name="title_teams">Teams</string>
+    <string name="title_menu">Menu</string>
+
+    <string name="all_tournament">All Tournament</string>
+    <string name="leagues">Leagues</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="current">Current</string>
+    <string name="sport">Sport</string>
+    <string name="tournament_names">Slan-Esport Tournament</string>
+    <string name="tournament_date">16 July to 17 July</string>
+    <string name="game_location">Gamepoint,Madhapur</string>
+
+    //dialog sport type
+    <string name="tennis">Tennis</string>
+    <string name="cricket">Cricket</string>
+    <string name="football">Football</string>
+    <string name="volleyball">Volleyball</string>
+
+
+    //menu Players
+    <string name="all_players">All Players</string>
+    <string name="search">Search</string>
+    <string name="leauge_name_one">SLAN <font color="#FE6725">Racket</font> Sport League</string>
+    <string name="add_score">Add Score</string>
+    <string name="add">Add</string>
+    <string name="team_player">Team Player</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="enter_valid_mobile_number">Enter valid Mobile Number</string>
+    <string name="enter_dob">Enter DOB</string>
+    <string name="invalid_dob_format">Invalid DOB Format</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="id_proof">Id Proof</string>
+    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="save">Save</string>
+    <string name="night_highlanders_legends">Night Highlanders legends</string>
+    <string name="past_matches">Past matches</string>
+    <string name="from_date">From Date:</string>
+    <string name="default_date">10/06/2023</string>
+    <string name="to_date">To Date:</string>
+    <string name="calendar">calendar</string>
+
+
+
 </resources>

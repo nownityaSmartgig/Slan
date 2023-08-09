@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.slan.admin.R
 import com.slan.admin.data.source.local.PlayerPaymentDataSource
 import com.slan.admin.databinding.FragmentPlayerPaymentsBinding
@@ -27,6 +28,8 @@ class PlayerPaymentsFragment : Fragment() {
     private lateinit var binding: FragmentPlayerPaymentsBinding
 
     private val playerPaymentsAdapter = PlayerPaymentsRVAdapter()
+    private val dateFormatter = SimpleDateFormat("dd/MM/yyyy" , Locale.getDefault())
+    private val calendar = Calendar.getInstance()
 
 
 //    private val playerPaymentsAdapter =
@@ -55,15 +58,12 @@ class PlayerPaymentsFragment : Fragment() {
 
 
 
+        /** Sorting Recyclerview on the basis of date will implement while api integration */
         binding.rlFrom.setOnClickListener {
-            showDatePickerDialog(binding.tvDateFrom)
-//            showDatePickerDialog2(binding.tvDateFrom)
-//            showDatePickerDialog3(binding.tvDateFrom,binding.tvFromDate)
+            showFromDatePickerDialog()
         }
         binding.rlTo.setOnClickListener {
-            showDatePickerDialog(binding.tvDateTo)
-//            showDatePickerDialog2(binding.tvDateTo)
-//            showDatePickerDialog3(binding.tvDateTo,binding.tvFromDate)
+            showToDatePickerDialog()
         }
 
 
@@ -74,91 +74,51 @@ class PlayerPaymentsFragment : Fragment() {
 
     }
 
-    private fun showDatePickerDialog(textView: TextView) {
-        val calendar = Calendar.getInstance()
-        val year = calendar.get(Calendar.YEAR)
-        val month = calendar.get(Calendar.MONTH)
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
-
+    private fun showFromDatePickerDialog() {
         val datePickerDialog = DatePickerDialog(
-            requireContext(),DatePickerDialog.OnDateSetListener { _,selectedYear, selectedMonth, selectedDay ->
-                val selectedDate = "${selectedDay}/${selectedMonth+1}/${selectedYear}"
-                textView.text = selectedDate
+            requireContext(),DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
+                val selectedDate = Calendar.getInstance()
+                selectedDate.set(year , month , dayOfMonth)
+                binding.tvDateFrom.text = dateFormatter.format(selectedDate.time)
 
-            },year,month,day
-        )
+
+            },calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH),
+
+            )
         datePickerDialog.datePicker.maxDate = calendar.timeInMillis
-
         datePickerDialog.show()
+
     }
+    private fun showToDatePickerDialog() {
+        val fromDate = binding.tvDateFrom.text.toString()
+        if (fromDate.isNotEmpty()) {
+            val minDate = dateFormatter.parse(fromDate)
+            val datePickerDialog = DatePickerDialog(
+                requireContext() ,
+                DatePickerDialog.OnDateSetListener { _ , year , month , dayOfMonth ->
+                    val selectedDate = Calendar.getInstance()
+                    selectedDate.set(year , month , dayOfMonth)
+                    binding.tvDateTo.text = dateFormatter.format(selectedDate.time)
+                } ,
+                calendar.get(Calendar.YEAR) ,
+                calendar.get(Calendar.MONTH) ,
+                calendar.get(Calendar.DAY_OF_MONTH) ,
+            )
 
-
-    private fun showDatePickerDialog2(textView: TextView, fromDate:TextView) {
-        val calendar = Calendar.getInstance()
-        val year = calendar.get(Calendar.YEAR)
-        val month = calendar.get(Calendar.MONTH)
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
-
-        val datePickerDialog = DatePickerDialog(
-            requireContext(),DatePickerDialog.OnDateSetListener { _,selectedYear, selectedMonth, selectedDay ->
-                val selectedDate = "${selectedDay}/${selectedMonth+1}/${selectedYear}"
-                textView.text = selectedDate
-
-            },year,month,day
-        )
-        datePickerDialog.datePicker.maxDate = calendar.timeInMillis
-
-        if (!fromDate.text.isNullOrEmpty()) {
-//            val fromDateParts = fromDate.text.toString().split("/")
-            val fromDateParts = fromDate.text.toString().split("/")
-
-            val fromDay= fromDateParts[0].toInt()
-            val fromMonth= fromDateParts[1].toInt()-1
-            val fromYear = fromDateParts[2].toInt()
-
-
-            val minDateCalendar=Calendar.getInstance().apply {
-                set(Calendar.DAY_OF_MONTH,fromDay)
-                set(Calendar.MONTH,fromMonth)
-                set(Calendar.YEAR,fromYear)
+            val calendarCopy = Calendar.getInstance()
+            if (minDate != null) {
+                calendarCopy.time = minDate
             }
-            datePickerDialog.datePicker.minDate = minDateCalendar.timeInMillis
+            calendarCopy.add(Calendar.DAY_OF_MONTH ,+1)
+            datePickerDialog.datePicker.minDate = calendarCopy.timeInMillis
+            datePickerDialog.datePicker.maxDate = calendar.timeInMillis
+            datePickerDialog.show()
+        } else {
+            Toast.makeText(requireContext() , "Select \"From Date\" First" , Toast.LENGTH_SHORT).show()
         }
 
-        datePickerDialog.show()
-    }
-
-    private fun showDatePickerDialog3(textView: TextView, otherDateView: TextView) {
-        val calendar = Calendar.getInstance()
-        val year = calendar.get(Calendar.YEAR)
-        val month = calendar.get(Calendar.MONTH)
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
-
-        val datePickerDialog = DatePickerDialog(
-            requireContext(), DatePickerDialog.OnDateSetListener { _, selectedYear, selectedMonth, selectedDay ->
-                val selectedDate = "${selectedDay}/${selectedMonth + 1}/${selectedYear}"
-                textView.text = selectedDate
-            }, year, month, day
-        )
-        datePickerDialog.datePicker.maxDate = calendar.timeInMillis
-
-        if (!otherDateView.text.isNullOrEmpty()) {
-            val otherDateParts = otherDateView.text.toString().split("/")
-            if (otherDateParts.size == 3) {
-                val fromDay = otherDateParts[0].toInt()
-                val fromMonth = otherDateParts[1].toInt() - 1
-                val fromYear = otherDateParts[2].toInt()
-
-                val minDateCalendar = Calendar.getInstance().apply {
-                    set(Calendar.DAY_OF_MONTH, fromDay)
-                    set(Calendar.MONTH, fromMonth)
-                    set(Calendar.YEAR, fromYear)
-                }
-                datePickerDialog.datePicker.minDate = minDateCalendar.timeInMillis
-            }
-        }
-
-        datePickerDialog.show()
     }
 
 }

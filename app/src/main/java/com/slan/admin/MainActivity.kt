@@ -29,14 +29,14 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_tournament, R.id.navigation_players, R.id.navigation_teams
+                R.id.navigation_tournament, R.id.navigation_players, R.id.navigation_teams, R.id.navigation_menu
             )
         )
         setupActionBarWithNavController(navController , appBarConfiguration)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.navigation_tournament, R.id.navigation_players, R.id.navigation_teams -> {
+                R.id.navigation_tournament, R.id.navigation_players, R.id.navigation_teams, R.id.navigation_menu -> {
 //                    navView.show()
                     navView.visibility = View.VISIBLE
                 }

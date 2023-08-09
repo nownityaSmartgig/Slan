@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.slan.admin.R
+import com.slan.admin.data.source.local.TeamMemberDataSource
 import com.slan.admin.databinding.FragmentTeamMembersBinding
+import com.slan.admin.ui.adapters.teams_a.TeamMembersRVAdapter
 
 class TeamMembersFragment : Fragment() {
 
@@ -17,6 +20,7 @@ class TeamMembersFragment : Fragment() {
 
     private lateinit var viewModel: TeamMembersViewModel
     private lateinit var binding: FragmentTeamMembersBinding
+    private val teamMembersAdapter= TeamMembersRVAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
@@ -36,6 +40,21 @@ class TeamMembersFragment : Fragment() {
     override fun onViewCreated(view: View , savedInstanceState: Bundle?) {
         super.onViewCreated(view , savedInstanceState)
 
+        teamMembersRVAdapterBinding()
+
+        binding.tvBtAdd.setOnClickListener {
+            val action =
+                TeamMembersFragmentDirections.actionTeamMembersFragmentToAddTeamMemberFragment()
+            it.findNavController().navigate(action)
+
+        }
+
+    }
+
+    private fun teamMembersRVAdapterBinding() {
+        val dataSource = TeamMemberDataSource().loadTeamMemberDataSource()
+        binding.rvTeamMembersList.adapter = teamMembersAdapter
+        teamMembersAdapter.submitList(dataSource)
     }
 
 }

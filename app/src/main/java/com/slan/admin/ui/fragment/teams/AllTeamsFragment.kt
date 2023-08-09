@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import com.slan.admin.R
+import com.slan.admin.data.model.AllTeamsListData
 import com.slan.admin.data.source.local.AllTeamsDataSource
 import com.slan.admin.databinding.FragmentAllTeamsBinding
 import com.slan.admin.ui.adapters.teams_a.AllTeamsRVAdapter
@@ -20,7 +22,8 @@ class AllTeamsFragment : Fragment() {
     private lateinit var viewModel: AllTeamsViewModel
 
     private lateinit var binding: FragmentAllTeamsBinding
-    private val allTeamsAdapter =AllTeamsRVAdapter()
+    private val allTeamsAdapter = AllTeamsRVAdapter()
+    private var originalList :List<AllTeamsListData> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
@@ -41,13 +44,43 @@ class AllTeamsFragment : Fragment() {
         super.onViewCreated(view , savedInstanceState)
 
         val dataSource = AllTeamsDataSource().loadAllTeamsDataSource()
+        originalList = dataSource
         binding.rvAllTeamsList.adapter = allTeamsAdapter
-        allTeamsAdapter.submitList(dataSource)
+        allTeamsAdapter.submitList(originalList)
 
 
 
+        binding.svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    newText?.let {
+                        searchList(it)
+                    }
+                } else {
+                    allTeamsAdapter.submitList(originalList)
+                }
+                return true
+
+            }
+        })
 
 
     }
+
+    private fun searchList(query: String) {
+        val filterData =originalList.filter { list ->
+            list.teamName.contains(query , ignoreCase = true)
+                    || list.teamOwnerName.contains(query , ignoreCase = true)
+                    || list.teamOwnerNumber.contains(query , ignoreCase = true)
+                    ||list.sports.contains(query , ignoreCase = true)
+        }
+        allTeamsAdapter.submitList(filterData)
+
+    }
+
 
 }
