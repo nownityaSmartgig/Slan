@@ -1,6 +1,8 @@
 package com.slan.admin.ui.fragment.teams
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
+import android.app.Dialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.text.TextUtils
@@ -12,6 +14,7 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.slan.admin.R
 import com.slan.admin.data.source.local.AddTeamMemberDataSource
+import com.slan.admin.databinding.DialogBoxPlayerRoleBinding
 import com.slan.admin.databinding.FragmentAddTeamMemberBinding
 import com.slan.admin.ui.adapters.teams_a.AddTeamMemberRVAdapter
 import java.text.SimpleDateFormat
@@ -27,6 +30,8 @@ class AddTeamMemberFragment : Fragment() {
     private lateinit var viewModel: AddTeamMemberViewModel
     private lateinit var binding: FragmentAddTeamMemberBinding
     private val addTeamMemberAdapter = AddTeamMemberRVAdapter()
+
+    private var selectedPlayerRole: String? = null
 
     private val dateFormatter = SimpleDateFormat("dd/MM/yyyy" , Locale.getDefault())
     private val calendar = Calendar.getInstance()
@@ -54,23 +59,9 @@ class AddTeamMemberFragment : Fragment() {
         addTeamMemberAdapter.submitList(dataSource)
 
         binding.tvDob.setOnClickListener {
-            val maxdate = Calendar.getInstance()
-            maxdate.add(Calendar.YEAR, -1)
-            val datePickerDialog = DatePickerDialog(
-                requireContext() ,
-                DatePickerDialog.OnDateSetListener { _ , year , month , dayOfMonth ->
-                    val selectedDate = Calendar.getInstance()
-                    selectedDate.set(year , month , dayOfMonth)
-                    binding.tvDob.text = dateFormatter.format(selectedDate.time)
+            dobCalendar()
 
 
-                } ,
-                calendar.get(Calendar.YEAR) ,
-                calendar.get(Calendar.MONTH) ,
-                calendar.get(Calendar.DAY_OF_MONTH) ,
-            )
-            datePickerDialog.datePicker.maxDate = maxdate.timeInMillis
-            datePickerDialog.show()
 
         }
 
@@ -89,7 +80,92 @@ class AddTeamMemberFragment : Fragment() {
         }
 
 
+        binding.tvTeamPlayer.setOnClickListener {
 
+            playerRoleDialog()
+
+
+        }
+    }
+
+    private fun playerRoleDialog() {
+        val dialogBoxBinding = DialogBoxPlayerRoleBinding.inflate(layoutInflater)
+        val dialogView = dialogBoxBinding.root
+        val dialogBox = Dialog(requireContext())
+        dialogBox.setContentView(dialogView)
+
+        when (selectedPlayerRole) {
+            "Captain" -> dialogBoxBinding.rbCaptain.isChecked = true
+            "Vice Captain" -> dialogBoxBinding.rbViceCaptain.isChecked = true
+            "Team Player" -> dialogBoxBinding.rbTeamPlayer.isChecked = true
+        }
+
+        dialogBoxBinding.rbCaptain.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                selectedPlayerRole = ("Captain")
+            }
+        }
+
+        dialogBoxBinding.rbViceCaptain.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                selectedPlayerRole = ("Vice Captain")
+            }
+        }
+
+        dialogBoxBinding.rbTeamPlayer.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                selectedPlayerRole = ("Team Player")
+            }
+        }
+
+        dialogBoxBinding.tvBtCancel.setOnClickListener {
+            dialogBox.dismiss()
+
+        }
+
+        dialogBoxBinding.tvBtOk.setOnClickListener {
+            if (!selectedPlayerRole.isNullOrEmpty()) {
+                binding.tvTeamPlayer.text = selectedPlayerRole.toString()
+                toastView(selectedPlayerRole!!)
+            }
+
+            dialogBox.dismiss()
+
+        }
+
+        dialogBox.show()
+    }
+
+//    private fun toastView(text:String) {
+//        Toast.makeText(requireContext() , text , Toast.LENGTH_SHORT).show()
+//    }
+
+    private fun toastView(text: String?) {
+        text?.let {
+            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+
+    private fun dobCalendar() {
+        val maxdate = Calendar.getInstance()
+        maxdate.add(Calendar.YEAR , -1)
+        val datePickerDialog = DatePickerDialog(
+            requireContext() ,
+            DatePickerDialog.OnDateSetListener { _ , year , month , dayOfMonth ->
+                val selectedDate = Calendar.getInstance()
+                selectedDate.set(year , month , dayOfMonth)
+                binding.tvDob.text = dateFormatter.format(selectedDate.time)
+
+
+            } ,
+            calendar.get(Calendar.YEAR) ,
+            calendar.get(Calendar.MONTH) ,
+            calendar.get(Calendar.DAY_OF_MONTH) ,
+        )
+        datePickerDialog.datePicker.maxDate = maxdate.timeInMillis
+        datePickerDialog.show()
     }
 
     private fun validation(): Boolean {

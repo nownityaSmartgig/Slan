@@ -1,19 +1,27 @@
 package com.slan.admin.ui.fragment.teams
 
+import android.app.Dialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import com.slan.admin.R
 import com.slan.admin.data.model.AllTeamsListData
 import com.slan.admin.data.source.local.AllTeamsDataSource
+import com.slan.admin.data.source.local.SportsDialogDataSource
+import com.slan.admin.databinding.DialogBoxPlayerTypeBinding
+import com.slan.admin.databinding.DialogboxSportsBinding
 import com.slan.admin.databinding.FragmentAllTeamsBinding
 import com.slan.admin.ui.adapters.teams_a.AllTeamsRVAdapter
+import com.slan.admin.ui.adapters.teams_a.CustomCallBackInterface
+import com.slan.admin.ui.adapters.teams_a.SportsDialogRvAdapter
 
-class AllTeamsFragment : Fragment() {
+class AllTeamsFragment : Fragment() , CustomCallBackInterface {
 
     companion object {
         fun newInstance() = AllTeamsFragment()
@@ -23,7 +31,12 @@ class AllTeamsFragment : Fragment() {
 
     private lateinit var binding: FragmentAllTeamsBinding
     private val allTeamsAdapter = AllTeamsRVAdapter()
-    private var originalList :List<AllTeamsListData> = emptyList()
+    private var originalList: List<AllTeamsListData> = emptyList()
+
+    private var selectedPlayerType: String? = null
+    private var selectedSportsId: Int? = null
+    private val adapter = SportsDialogRvAdapter(this)
+
 
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
@@ -48,8 +61,6 @@ class AllTeamsFragment : Fragment() {
         binding.rvAllTeamsList.adapter = allTeamsAdapter
         allTeamsAdapter.submitList(originalList)
 
-
-
         binding.svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
@@ -68,19 +79,151 @@ class AllTeamsFragment : Fragment() {
             }
         })
 
+        binding.tvSportsFilter.setOnClickListener {
+            sportsTypeDialogBox()
+        }
+
+        binding.tvTypesFilter.setOnClickListener {
+            playerTypesDialogBox()
+        }
+
+    }
+
+    private fun playerTypesDialogBox() {
+        val dialogBoxBinding = DialogBoxPlayerTypeBinding.inflate(layoutInflater)
+        val dialogView = dialogBoxBinding.root
+        val dialogBox = Dialog(requireContext())
+        dialogBox.setContentView(dialogView)
+
+        when (selectedPlayerType) {
+            "All" -> dialogBoxBinding.rbAll.isChecked = true
+            "Kid" -> dialogBoxBinding.rbKid.isChecked = true
+        }
+
+        dialogBoxBinding.rbAll.setOnCheckedChangeListener { _ , isChecked ->
+            if (isChecked) {
+                selectedPlayerType = "All"
+            }
+        }
+
+
+        dialogBoxBinding.rbKid.setOnCheckedChangeListener { _ , isChecked ->
+            if (isChecked) {
+                selectedPlayerType = "Kid"
+            }
+        }
+
+
+        dialogBoxBinding.tvBtCancel.setOnClickListener {
+            dialogBox.dismiss()
+        }
+
+        dialogBoxBinding.tvBtOk.setOnClickListener {
+            if (!selectedPlayerType.isNullOrEmpty()) {
+                binding.tvTypesFilter.text = selectedPlayerType.toString()
+                toastView(selectedPlayerType!!)
+
+            }
+            dialogBox.dismiss()
+        }
+
+        dialogBox.show()
+
+
+    }
+
+    private fun toastView(text: String?) {
+        text?.let {
+            Toast.makeText(requireContext() , it , Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun sportsTypeDialogBox() {
+        val dialogBoxBinding = DialogboxSportsBinding.inflate(layoutInflater)
+        val dialogView = dialogBoxBinding.root
+        val dialogBox = Dialog(requireContext())
+        dialogBox.setContentView(dialogView)
+
+        // Load data from SportsDialogDataSource
+        val dataSource = SportsDialogDataSource().loadSportsDialogDataSource()
+
+        dialogBoxBinding.rvSportsList.adapter = adapter
+        val lastSelectedIndex = adapter.getSelectedId()
+        if (lastSelectedIndex != null) {
+            adapter.setSelectedItem(lastSelectedIndex)
+        }
+
+        adapter.submitList(dataSource)
+
+        // set the selected sports if  available
+//        selectedSportsId?.let {sportsId ->
+//            adapter.setSelectedItem(sportsId)
+
+//        }
+
+        dialogBoxBinding.tvBtOk.setOnClickListener {
+
+            // Update the selected Sports Id
+            selectedSportsId = adapter.getSelectedId()
+
+//            selectedSportsId?.let { sportsId ->
+//                adapter.setSelectedItem(sportsId)
+//            }
+
+            // Using selectedSportsId to update the UI
+            val selectedSports = dataSource.find {
+                it.id == selectedSportsId
+            }
+
+            if (selectedSports != null) {
+                binding.tvSportsFilter.text = selectedSports.sportsName
+            } else {
+                binding.tvSportsFilter.text = "Sport"
+            }
+
+//            binding.tvSportsFilter.text= selectedSports?.sportsName?:"Sport"
+
+//            toastView(selectedSports?.toString())
+
+            dialogBox.dismiss()
+
+        }
+
+        dialogBoxBinding.tvBtCancel.setOnClickListener {
+            dialogBox.dismiss()
+        }
+
+        dialogBox.show()
+
 
     }
 
     private fun searchList(query: String) {
-        val filterData =originalList.filter { list ->
+        val filterData = originalList.filter { list ->
             list.teamName.contains(query , ignoreCase = true)
                     || list.teamOwnerName.contains(query , ignoreCase = true)
                     || list.teamOwnerNumber.contains(query , ignoreCase = true)
-                    ||list.sports.contains(query , ignoreCase = true)
+                    || list.sports.contains(query , ignoreCase = true)
         }
         allTeamsAdapter.submitList(filterData)
 
     }
+
+    override fun returnedItemFromAdapter(selectedItemIndex: Int) {
+//        val aa = adapter.setSelectedItem(selcItemIndex)
+//        Log.v("TestTheBox" , aa.toString())
+//        Log.d("TestTheBox" , aa.toString())
+
+        Log.d("AllTeamsFragment", "selectedItemIndex: $selectedItemIndex")
+        adapter.setSelectedItem(selectedItemIndex)
+        val aa = adapter.getSelectedId()
+        Log.v("AllTeamsFragment", "selectedId from adapter: $aa")
+    }
+
+//    package:com.slan.admin
+
+
+
 
 
 }

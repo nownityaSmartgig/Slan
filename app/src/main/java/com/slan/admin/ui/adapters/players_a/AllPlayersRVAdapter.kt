@@ -44,6 +44,8 @@ class AllPlayersRVAdapter :
                         AllPlayersFragmentDirections.actionNavigationPlayersToPlayerPaymentsFragment()
                     it.findNavController().navigate(action)
 
+
+
                 }
             }
 
