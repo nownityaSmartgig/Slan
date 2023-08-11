@@ -17,7 +17,8 @@ import com.slan.admin.ui.adapters.tournments_a.MyEventListRVAdapter
 class TournamentsEventsFragment : Fragment() {
 
     private lateinit var binding:FragmentTournamentsEventsBinding
-    private val eventListAdapter=MyEventListRVAdapter()
+    private val eventListAdapter = MyEventListRVAdapter()
+
 
 
 

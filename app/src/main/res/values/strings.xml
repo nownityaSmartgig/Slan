@@ -164,15 +164,17 @@ Abc12330</string>
     <string name="vice_captain">Vice-Captain</string>
 
     <string name="kid">Kid</string>
-
-
-
-
-
-
-
-
-
+    <string name="_4">4</string>
+    <string name="_3">3</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+    <string name="_5">5</string>
+    <string name="abc">ABC</string>
+    <string name="xyz">XYZ</string>
+    <string name="b_sports_madhapur">B-SPORTS Madhapur</string>
+    <string name="time_and_date">Wed, 27 Jun 2023 -06:00 AM/Local</string>
+    <string name="scores">Scores</string>
+    <string name="match_and_groups">12 Match, Group A</string>
 
 
 </resources>

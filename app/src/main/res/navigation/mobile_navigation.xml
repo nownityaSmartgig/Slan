@@ -95,6 +95,9 @@
         <action
             android:id="@+id/action_tournaments_events_to_drawScreenFragment"
             app:destination="@id/drawScreenFragment" />
+        <action
+            android:id="@+id/action_tournaments_events_to_schedulesFragment"
+            app:destination="@id/schedulesFragment" />
 
     </fragment>
     <fragment
@@ -130,4 +133,9 @@
         android:name="com.slan.admin.ui.fragment.tournaments.ViewParticipantsDetailsFragment"
         android:label="View Participants Details"
         tools:layout="@layout/fragment_view_participants_details" />
+    <fragment
+        android:id="@+id/schedulesFragment"
+        android:name="com.slan.admin.ui.fragment.tournaments.SchedulesFragment"
+        android:label="fragment_schedules"
+        tools:layout="@layout/fragment_schedules" />
 </navigation>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="12dp"
+    android:paddingHorizontal="13dp"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_rectangle_outline_wild_blue_yonder">
+
+
+            <TextView
+                android:id="@+id/tv_league_name_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="@string/leauge_name_one"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_team_one_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="@string/abc"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_versus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_versus" />
+
+            <ImageView
+                android:id="@+id/iv_win_check_A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/ic_charm_tick"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_team_one_name"
+                app:layout_constraintStart_toEndOf="@+id/tv_team_one_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_team_one_name" />
+
+            <TextView
+                android:id="@+id/tv_versus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/vs"
+                android:textColor="@color/orange"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toStartOf="@+id/tv_team_two_name"
+                app:layout_constraintStart_toEndOf="@+id/tv_team_one_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_league_name_heading" />
+
+            <TextView
+                android:id="@+id/tv_team_two_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="29dp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="@string/xyz"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_versus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_versus"
+                app:layout_constraintVertical_bias="0.461" />
+
+
+            <ImageView
+                android:id="@+id/iv_win_check_B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:src="@drawable/ic_charm_tick"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_team_two_name"
+                app:layout_constraintEnd_toStartOf="@+id/tv_team_two_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_team_two_name" />
+
+            <TextView
+                android:id="@+id/tv_match_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="@string/match_and_groups"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_versus"
+                app:layout_constraintStart_toStartOf="@+id/tv_versus"
+                app:layout_constraintTop_toBottomOf="@+id/tv_versus" />
+
+            <TextView
+                android:id="@+id/tv_tournament_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="@string/b_sports_madhapur"
+                android:textColor="@color/light_gray"
+                app:layout_constraintEnd_toEndOf="@+id/tv_match_number"
+                app:layout_constraintStart_toStartOf="@+id/tv_match_number"
+                app:layout_constraintTop_toBottomOf="@+id/tv_match_number" />
+
+            <TextView
+                android:id="@+id/tv_tournament_time_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="@string/time_and_date"
+                app:layout_constraintEnd_toEndOf="@+id/tv_tournament_location"
+                app:layout_constraintStart_toStartOf="@+id/tv_tournament_location"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tournament_location" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_score_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tv_team_two_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_team_one_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tournament_time_date">
+
+                <TextView
+                    android:id="@+id/tv_score_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scores"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="45dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_score_heading">
+
+                    <include
+                        android:id="@+id/layout_score_table"
+                        layout="@layout/layout_score_table" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_addScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/ubuntu_medium"
+                android:text="@string/add_score"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tournament_time_date"
+
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

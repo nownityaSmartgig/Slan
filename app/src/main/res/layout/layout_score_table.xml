@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tv_heading_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_heading_two"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_heading_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="2"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_heading_three"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_heading_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="3"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_heading_four"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_heading_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="4"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_heading_five"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_heading_five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="5"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewH_1"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_heading_one" />
+
+    <View
+        android:id="@+id/viewH_2"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1" />
+
+    <View
+        android:id="@+id/viewH_3"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewH_2" />
+
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="1dp"
+        android:layout_height="52dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1" />
+
+    <View
+        android:id="@+id/view_2"
+        android:layout_width="1dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="13dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        app:layout_constraintEnd_toStartOf="@id/tv_heading_one"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1" />
+
+    <View
+        android:id="@+id/view_3"
+        android:layout_width="1dp"
+        android:layout_height="52dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        app:layout_constraintEnd_toStartOf="@id/tv_heading_two"
+        app:layout_constraintStart_toEndOf="@id/tv_heading_one"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1" />
+
+    <View
+        android:id="@+id/view_4"
+        android:layout_width="1dp"
+        android:layout_height="52dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        app:layout_constraintEnd_toStartOf="@id/tv_heading_three"
+        app:layout_constraintStart_toEndOf="@id/tv_heading_two"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1" />
+
+    <View
+        android:id="@+id/view_5"
+        android:layout_width="1dp"
+        android:layout_height="52dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        app:layout_constraintEnd_toStartOf="@id/tv_heading_four"
+        app:layout_constraintStart_toEndOf="@id/tv_heading_three"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1" />
+
+    <View
+        android:id="@+id/view_6"
+        android:layout_width="1dp"
+        android:layout_height="52dp"
+        android:background="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        app:layout_constraintEnd_toStartOf="@id/tv_heading_five"
+        app:layout_constraintStart_toEndOf="@id/tv_heading_four"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1" />
+
+
+    <View
+        android:id="@+id/view_7"
+        android:layout_width="1dp"
+        android:layout_height="52dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1" />
+
+    <LinearLayout
+        android:id="@+id/ll_teamOne"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1"
+        app:layout_constraintBottom_toTopOf="@id/viewH_2"
+        app:layout_constraintEnd_toStartOf="@id/view_2"
+        app:layout_goneMarginStart="10dp"
+
+
+        >
+        <TextView
+            android:id="@+id/tv_teamOneNameHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:text="ABC"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_teamOneCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tick_orange"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_teamTwo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewH_2"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        app:layout_constraintEnd_toStartOf="@id/view_2"
+        app:layout_goneMarginStart="10dp"
+
+
+        >
+        <TextView
+            android:id="@+id/tv_teamTwoNameHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:text="XYZ"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_teamTwoCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_tick_orange"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+
+            />
+
+    </LinearLayout>
+
+
+    <!--    <RadioGroup-->
+    <!--        android:id="@+id/rg_radioButton"-->
+    <!--        android:layout_width="30dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:checkedButton="@id/rb_teamOne"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/viewH_3"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/view_1"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/viewH_1">-->
+
+
+    <!--        <com.google.android.material.radiobutton.MaterialRadioButton-->
+    <!--            android:id="@+id/rb_teamOne"-->
+    <!--            android:layout_width="18dp"-->
+    <!--            android:layout_height="10dp"-->
+    <!--            android:layout_gravity="center_horizontal"-->
+    <!--            android:layout_marginTop="3dp"-->
+    <!--            android:layout_marginBottom="4dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@drawable/custom_radio_button"-->
+    <!--            android:buttonTint="@android:color/transparent" />-->
+
+    <!--        <com.google.android.material.radiobutton.MaterialRadioButton-->
+    <!--            android:id="@+id/rb_teamTwo"-->
+    <!--            android:layout_width="18dp"-->
+    <!--            android:layout_height="10dp"-->
+    <!--            android:layout_gravity="center_horizontal"-->
+    <!--            android:layout_marginTop="4dp"-->
+    <!--            android:layout_marginBottom="3dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@drawable/custom_radio_button"-->
+    <!--            android:buttonTint="@android:color/transparent" />-->
+
+    <!--    </RadioGroup>-->
+
+    <TextView
+        android:id="@+id/tv_teamOneScoreROne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_2"
+        app:layout_constraintEnd_toStartOf="@id/view_3"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1"
+        app:layout_constraintBottom_toTopOf="@id/viewH_2"
+        />
+
+    <TextView
+        android:id="@+id/tv_teamOneScoreRTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_3"
+        app:layout_constraintEnd_toStartOf="@id/view_4"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1"
+        app:layout_constraintBottom_toTopOf="@id/viewH_2"
+        />
+
+    <TextView
+        android:id="@+id/tv_teamOneScoreRThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_4"
+        app:layout_constraintEnd_toStartOf="@id/view_5"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1"
+        app:layout_constraintBottom_toTopOf="@id/viewH_2"
+        />
+
+    <TextView
+        android:id="@+id/tv_teamOneScoreRFour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_5"
+        app:layout_constraintEnd_toStartOf="@id/view_6"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1"
+        app:layout_constraintBottom_toTopOf="@id/viewH_2"
+        />
+
+    <TextView
+        android:id="@+id/tv_teamOneScoreRFive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_6"
+        app:layout_constraintEnd_toStartOf="@id/view_7"
+        app:layout_constraintTop_toBottomOf="@id/viewH_1"
+        app:layout_constraintBottom_toTopOf="@id/viewH_2"
+        />
+
+    <TextView
+        android:id="@+id/tv_teamTwoScoreROne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_2"
+        app:layout_constraintEnd_toStartOf="@id/view_3"
+        app:layout_constraintTop_toBottomOf="@id/viewH_2"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        />
+
+    <TextView
+        android:id="@+id/tv_teamTwoScoreRTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_3"
+        app:layout_constraintEnd_toStartOf="@id/view_4"
+        app:layout_constraintTop_toBottomOf="@id/viewH_2"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        />
+
+    <TextView
+        android:id="@+id/tv_teamTwoScoreRThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_4"
+        app:layout_constraintEnd_toStartOf="@id/view_5"
+        app:layout_constraintTop_toBottomOf="@id/viewH_2"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        />
+
+    <TextView
+        android:id="@+id/tv_teamTwoScoreRFour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_5"
+        app:layout_constraintEnd_toStartOf="@id/view_6"
+        app:layout_constraintTop_toBottomOf="@id/viewH_2"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        />
+
+    <TextView
+        android:id="@+id/tv_teamTwoScoreRFive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/view_6"
+        app:layout_constraintEnd_toStartOf="@id/view_7"
+        app:layout_constraintTop_toBottomOf="@id/viewH_2"
+        app:layout_constraintBottom_toTopOf="@id/viewH_3"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

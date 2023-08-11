@@ -24,6 +24,13 @@ class MyEventListRVAdapter:ListAdapter<EventListData,MyEventListRVAdapter.MyEven
                 val action=TournamentsEventsFragmentDirections.actionTournamentsEventsToDrawScreenFragment()
                 it.findNavController().navigate(action)
             }
+
+            binding.btSchedule.setOnClickListener {
+                val action =
+                    TournamentsEventsFragmentDirections.actionTournamentsEventsToSchedulesFragment()
+                it.findNavController().navigate(action
+                )
+            }
         }
         fun bind(item: EventListData) {
             binding.tvSportName.text = item.EventName
