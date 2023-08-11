@@ -16,6 +16,8 @@
         android:textSize="12sp"
         android:layout_marginStart="16dp"
         android:background="@drawable/button_left_curve"
+        android:backgroundTint="@color/orange"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/bt_league"

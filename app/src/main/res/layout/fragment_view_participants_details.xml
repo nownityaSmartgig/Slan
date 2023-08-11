@@ -46,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_image_layout_adhar"
+        android:visibility="invisible"
         android:layout_marginTop="-10dp"
         android:layout_marginStart="169dp"
         android:layout_marginEnd="21dp"
@@ -56,6 +57,7 @@
         android:id="@+id/tv_file_name"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         android:text="@string/adhar_card"
         android:textColor="@color/bluebonnet"
         app:layout_constraintStart_toStartOf="@id/iv_adhar_card"
@@ -70,7 +72,7 @@
         android:background="@color/light_silver"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_click_to_add"
+        app:layout_constraintTop_toBottomOf="@id/tv_file_name"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="102dp"
         />
@@ -111,6 +113,7 @@
         android:background="@drawable/rounded_button_bg"
         app:layout_constraintEnd_toStartOf="@id/bt_cancel"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cb_age_proof"/>
 
     <androidx.appcompat.widget.AppCompatButton

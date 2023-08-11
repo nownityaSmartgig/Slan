@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/round_dialog_box"
     android:layout_width="249dp"
-    android:layout_height="221dp"
+    android:layout_height="wrap_content"
     >
 
 
@@ -30,25 +30,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_coupan_list"
+
+    <RadioGroup
+        android:id="@+id/rg_coupon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         tools:itemCount="1"
-        tools:listitem="@layout/rv_layout_coupan_list"
+        tools:listitem="@layout/rv_layout_coupon_list"
         app:layout_constraintTop_toBottomOf="@id/tv_coupan"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_coupan_list"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            tools:itemCount="2"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/rv_layout_coupon_list"
+            app:layout_constraintTop_toBottomOf="@id/tv_coupan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </RadioGroup>
+
+
 
     <View
         android:id="@+id/view_2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="1dp"
         android:layout_marginHorizontal="16dp"
         android:background="@color/light_silver"
-        app:layout_constraintTop_toBottomOf="@id/rv_coupan_list"
+        app:layout_constraintTop_toBottomOf="@id/rg_coupon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -60,18 +79,17 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_cancel"
-            android:textColor="@color/orange"
-            android:fontFamily="@font/ubuntu_regular"
-            android:textAllCaps="false"
-            android:textSize="10sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
+            android:fontFamily="@font/ubuntu_regular"
             android:text="Cancel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="10sp"
             app:layout_constraintEnd_toStartOf="@id/btn_ok"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/view_3"

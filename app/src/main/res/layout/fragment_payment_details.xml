@@ -14,22 +14,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/coupan"
+        android:drawableEnd="@drawable/ic_down_arrow_orange"
+        android:drawablePadding="10dp"
         style="@style/text_heading_small"
         android:layout_marginTop="30dp"
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_coupan_dropdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_down_arrow_orange"
-        android:layout_marginStart="2dp"
-        app:layout_constraintStart_toEndOf="@id/tv_coupan"
-        app:layout_constraintTop_toTopOf="@id/tv_coupan"
-        app:layout_constraintBottom_toBottomOf="@id/tv_coupan"
-        />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_geography"
@@ -37,22 +29,15 @@
         android:layout_height="wrap_content"
         android:text="@string/geography"
         style="@style/text_heading_small"
+        android:drawableEnd="@drawable/ic_down_arrow_orange"
+        android:drawablePadding="10dp"
         android:layout_marginStart="50dp"
-        app:layout_constraintStart_toEndOf="@id/iv_coupan_dropdown"
-        app:layout_constraintTop_toTopOf="@id/iv_coupan_dropdown"
-        app:layout_constraintBottom_toBottomOf="@id/iv_coupan_dropdown"
+        app:layout_constraintStart_toEndOf="@id/tv_coupan"
+        app:layout_constraintTop_toTopOf="@id/tv_coupan"
+        app:layout_constraintBottom_toBottomOf="@id/tv_coupan"
         />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_geography_dropdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_down_arrow_orange"
-        android:layout_marginStart="2dp"
-        app:layout_constraintStart_toEndOf="@id/tv_geography"
-        app:layout_constraintTop_toTopOf="@id/tv_geography"
-        app:layout_constraintBottom_toBottomOf="@id/tv_geography"
-        />
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_payment_mode"
@@ -60,23 +45,25 @@
         android:layout_height="wrap_content"
         android:text="@string/payment_mode"
         style="@style/text_heading_small"
+        android:drawableEnd="@drawable/ic_down_arrow_orange"
+        android:drawablePadding="10dp"
         android:layout_marginStart="40dp"
-        app:layout_constraintStart_toEndOf="@id/iv_geography_dropdown"
-        app:layout_constraintTop_toTopOf="@id/iv_geography_dropdown"
-        app:layout_constraintBottom_toBottomOf="@id/iv_geography_dropdown"
+        app:layout_constraintStart_toEndOf="@id/tv_geography"
+        app:layout_constraintTop_toTopOf="@id/tv_geography"
+        app:layout_constraintBottom_toBottomOf="@id/tv_geography"
         />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_payment_mode_dropdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_down_arrow_orange"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="2dp"
-        app:layout_constraintStart_toEndOf="@id/tv_payment_mode"
-        app:layout_constraintTop_toTopOf="@id/tv_payment_mode"
-        app:layout_constraintBottom_toBottomOf="@id/tv_payment_mode"
-        />
+<!--    <com.google.android.material.imageview.ShapeableImageView-->
+<!--        android:id="@+id/iv_payment_mode_dropdown"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_down_arrow_orange"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:layout_marginStart="2dp"-->
+<!--        app:layout_constraintStart_toEndOf="@id/tv_payment_mode"-->
+<!--        app:layout_constraintTop_toTopOf="@id/tv_payment_mode"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/tv_payment_mode"-->
+<!--        />-->
 
     <View
         android:layout_width="match_parent"

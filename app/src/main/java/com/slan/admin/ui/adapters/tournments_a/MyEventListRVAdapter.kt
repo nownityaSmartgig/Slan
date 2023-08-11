@@ -47,6 +47,7 @@ class MyEventListRVAdapter:ListAdapter<EventListData,MyEventListRVAdapter.MyEven
     }
 
     override fun onBindViewHolder(holder: MyEventViewHolder, position: Int) {
+
         holder.bind(getItem(position))
 
     }
