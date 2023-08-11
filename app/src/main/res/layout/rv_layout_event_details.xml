@@ -22,11 +22,12 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_participants_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:text="@string/participants_details"
         android:fontFamily="@font/ubuntu_regular"
         android:textSize="11sp"
+        android:gravity="center_vertical"
         android:textColor="@color/bluebonnet"
         android:layout_marginStart="40dp"
         app:layout_constraintStart_toEndOf="@id/tv_sport_name"

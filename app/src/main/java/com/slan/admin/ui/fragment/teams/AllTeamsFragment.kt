@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import com.slan.admin.R
 import com.slan.admin.data.model.AllTeamsListData
@@ -52,6 +53,22 @@ class AllTeamsFragment : Fragment() , CustomCallBackInterface {
 //        viewModel = ViewModelProvider(this).get(AllTeamsViewModel::class.java)
 //        // TODO: Use the ViewModel
 //    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        //  get a reference to the activity
+//        (activity as AppCompatActivity).apply {
+//            title = "All Teams"
+//
+//        }
+
+
+
+
+    }
+
+
 
     override fun onViewCreated(view: View , savedInstanceState: Bundle?) {
         super.onViewCreated(view , savedInstanceState)
