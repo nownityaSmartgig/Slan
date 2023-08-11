@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_sport_name"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:backgroundTint="@color/light_silver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_sport_name"
+            style="@style/text_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:text="@string/squash"
+            android:textColor="@color/light_gray" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_sport_name"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_played_matches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_heading_small"
+            android:text="@string/played_matches"
+            android:textStyle="normal"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintEnd_toStartOf="@id/tv_win_matches"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_win_matches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_heading_small"
+            android:text="@string/win_matches"
+            android:textStyle="normal"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintEnd_toStartOf="@id/tv_loss_matches"
+            app:layout_constraintTop_toTopOf="@id/tv_played_matches"
+            app:layout_constraintBottom_toBottomOf="@id/tv_played_matches"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_loss_matches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_heading_small"
+            android:text="@string/loss_matches"
+            android:layout_marginEnd="25dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toStartOf="@id/tv_total_points"
+            app:layout_constraintTop_toTopOf="@id/tv_win_matches"
+            app:layout_constraintBottom_toBottomOf="@id/tv_win_matches"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_total_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_heading_small"
+            android:text="@string/total_points"
+            android:textStyle="normal"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_periwinkle"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_played_matches"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_points_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:itemCount="10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/rv_layout_points_table"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_played_matches"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

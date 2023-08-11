@@ -14,4 +14,15 @@
     <color name="light_periwinkle">#BDCAD9</color>
     <color name="jelly_bean_blue">#4D7699</color>
     <color name="bluebonnet">#1019F0</color>
+    <color name="cultured">#F7F7F7</color>
+    <color name="light_silver">#D9D9D9</color>
+
+
+
+    <color name="check_box_list">
+        <selector xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:color="@color/orange" android:state_checked="true" />
+            <item android:color="@color/white" android:state_checked="false" />
+        </selector>
+    </color>
 </resources>

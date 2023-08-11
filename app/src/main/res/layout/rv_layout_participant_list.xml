@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/light_silver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_event_name_details"
+        android:layout_width="59dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:maxLines="2"
+        android:clickable="true"
+        android:textSize="11sp"
+        android:textColor="@color/black"
+        android:text="@string/event_name_details"
+        style="@style/text_heading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_1"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_participant_name_details"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:maxLines="3"
+        style="@style/text_heading"
+        android:clickable="true"
+        android:textSize="11sp"
+        android:textColor="@color/bluebonnet"
+        android:text="@string/participants_name_details"
+        app:layout_constraintStart_toEndOf="@id/tv_event_name_details"
+        app:layout_constraintTop_toTopOf="@id/tv_event_name_details" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_date_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_heading"
+        android:text="@string/date_details"
+        android:textSize="11sp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toEndOf="@id/tv_participant_name_details"
+        app:layout_constraintTop_toTopOf="@id/tv_participant_name_details"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_registrant_details"
+        style="@style/text_heading"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:clickable="true"
+        android:maxLines="3"
+        android:text="@string/registrant_data"
+        android:textColor="@color/bluebonnet"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@id/tv_date_details"
+        app:layout_constraintTop_toTopOf="@id/tv_date_details" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

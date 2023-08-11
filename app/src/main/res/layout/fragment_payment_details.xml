@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.tournaments.PaymentDetailsFragment">
+
+
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_coupan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/coupan"
+        style="@style/text_heading_small"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_coupan_dropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_down_arrow_orange"
+        android:layout_marginStart="2dp"
+        app:layout_constraintStart_toEndOf="@id/tv_coupan"
+        app:layout_constraintTop_toTopOf="@id/tv_coupan"
+        app:layout_constraintBottom_toBottomOf="@id/tv_coupan"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_geography"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/geography"
+        style="@style/text_heading_small"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@id/iv_coupan_dropdown"
+        app:layout_constraintTop_toTopOf="@id/iv_coupan_dropdown"
+        app:layout_constraintBottom_toBottomOf="@id/iv_coupan_dropdown"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_geography_dropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_down_arrow_orange"
+        android:layout_marginStart="2dp"
+        app:layout_constraintStart_toEndOf="@id/tv_geography"
+        app:layout_constraintTop_toTopOf="@id/tv_geography"
+        app:layout_constraintBottom_toBottomOf="@id/tv_geography"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_payment_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/payment_mode"
+        style="@style/text_heading_small"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toEndOf="@id/iv_geography_dropdown"
+        app:layout_constraintTop_toTopOf="@id/iv_geography_dropdown"
+        app:layout_constraintBottom_toBottomOf="@id/iv_geography_dropdown"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_payment_mode_dropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_down_arrow_orange"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintStart_toEndOf="@id/tv_payment_mode"
+        app:layout_constraintTop_toTopOf="@id/tv_payment_mode"
+        app:layout_constraintBottom_toBottomOf="@id/tv_payment_mode"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_silver"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_coupan"
+
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
+        style="@style/text_detail_orange_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_coupan"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/count"
+        style="@style/text_detail_orange_large"
+        app:layout_constraintStart_toStartOf="@id/tv_payment_mode"
+        app:layout_constraintTop_toTopOf="@id/tv_status"
+        app:layout_constraintBottom_toBottomOf="@id/tv_status"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_silver"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_status"
+
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/success"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:textStyle="normal"
+        style="@style/text_heading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_status"
+
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_total_succes_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_count"
+        android:textStyle="normal"
+        style="@style/text_heading"
+        app:layout_constraintTop_toTopOf="@id/tv_success"
+        app:layout_constraintBottom_toBottomOf="@id/tv_success"
+        app:layout_constraintStart_toStartOf="@id/tv_count"
+        app:layout_constraintEnd_toEndOf="@id/tv_count"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_silver"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_success"
+
+        />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_successful"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/successful"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:textStyle="normal"
+        style="@style/text_heading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_success"
+
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_total_successful_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_count"
+        android:textStyle="normal"
+        style="@style/text_heading"
+        app:layout_constraintTop_toTopOf="@id/tv_successful"
+        app:layout_constraintBottom_toBottomOf="@id/tv_successful"
+        app:layout_constraintStart_toStartOf="@id/tv_count"
+        app:layout_constraintEnd_toEndOf="@id/tv_count"
+        />
+
+    <View
+        android:id="@+id/view_successful"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_silver"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_successful"
+
+        />
+
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="43dp"-->
+    <!--        android:background="@color/gray"-->
+    <!--        android:layout_marginTop="17dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tv_successful"/>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_successful"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

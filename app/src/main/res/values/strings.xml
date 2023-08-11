@@ -60,7 +60,119 @@
     <string name="default_date">10/06/2023</string>
     <string name="to_date">To Date:</string>
     <string name="calendar">calendar</string>
+
+
+    //tournaments Events
+    <string name="view_payment_details">View Payment Details</string>
+    <string name="tournament_full_name">SLAN Racket Sport Tournament</string>
+    <string name="open">Open</string>
+    <string name="location">Location</string>
+    <string name="duration">Duration</string>
+    <string name="team_count">0/100</string>
+    <string name="location_name">Hyderabad</string>
+    <string name="event_date">24/06/2023-30/06/2023</string>
+    <string name="event_name_details">Badminton-Doubles</string>
+    <string name="participants_details">1</string>
+    <string name="amount_paid_details">299.00</string>
+    <string name="schedule_heading">Schedule</string>
+    <string name="schedule_details">Schedule</string>
+    <string name="event_name_heading">Event-Name</string>
+    <string name="participants_heading">Participants</string>
+    <string name="amount_paid_heading">Total Amt.paid</string>
+
+
+    //payment details
+    <string name="coupan">Coupan</string>
+    <string name="geography">Geography</string>
+    <string name="payment_mode">Payment Mode</string>
+    <string name="status">Status</string>
+    <string name="count">Count</string>
+    <string name="success">Success</string>
+    <string name="total_count">1</string>
+    <string name="successful">Succesfull</string>
+    <string name="squash">Squash</string>
+    <string name="amount_paid">Amt.paid</string>
+    <string name="amount_remaining">Amt.to bePaid</string>
+    <string name="player_name">Subbu SP/******7930</string>
+    <string name="amount_tobe_paid_details">0.00</string>
+    <string name="coupan_code">Coupon Code
+Abc12330</string>
+    <string name="location_name_hyderabad">Hyderabad</string>
+    <string name="location_name_banglore">Banglore</string>
+
+
+    <string name="payment_method">Payment Method</string>
+    <string name="payment_msg">Paid Via UPI Received on 13/07/2023 paid for 4 members</string>
+
+    //All events
+    <string name="date">Date</string>
+    <string name="registrant_details">Registrant Details</string>
+    <string name="participants_name_details">Nakka arthav
+(7894561230)
+(DOB) May 04 1995</string>
+    <string name="date_details">JUL 04 2023</string>
+    <string name="registrant_data">Nakka arthav
+(7894561230)
+(DOB) May 04 1995</string>
+
+    //partcicpant details
+    <string name="add_age_proof">Add Age Proof</string>
+    <string name="click_to_add">Click to add file</string>
+    <string name="adhar_card">Aadhar.pdf.</string>
+    <string name="age_proof_verified">Age Proof Verified</string>
+    <string name="cancel">Cancel</string>
+
+    //Draw Screen
+    <string name="my_events">My Events</string>
+    <string name="events_heading">Events</string>
+    <string name="action_heading">Action</string>
+    <string name="event_name">Squash</string>
+    <string name="participant_name">Shubu</string>
+    <string name="action">Action</string>
+    <string name="draw">Draw</string>
+    <string name="schedule">Schedules</string>
+    <string name="points">Points</string>
+    <string name="round_1">Round 1</string>
+    <string name="qualify">Qualify</string>
+    <string name="Final">Final</string>
+
+    //rv_layout_Round
+    <string name="player1">Player 1</string>
+    <string name="vs">VS</string>
+    <string name="player2">Player 2</string>
+
+    //Schedule
+
+    <string name="tournament_full_name_color">SLAN <font color="#FE6725">Racket</font> Sport Tournament</string>
+    <string name="team_1">ABC</string>
+    <string name="team_2">XYZ</string>
+    <string name="match_no">12  Match, Group A</string>
+    <string name="match_location">B-SPORTS Madhapur</string>
+    <string name="match_time">Wed, 14 Jun 2023 -06:00 AM/Local</string>
+
+    //Points
+    <string name="played_matches">P</string>
+    <string name="win_matches">W</string>
+    <string name="loss_matches">L</string>
+    <string name="total_points">Pts</string>
+    <string name="username">Shubh SP</string>
+    <string name="played_matches_count">1</string>
+
+    //Add Member
     <string name="player_role">Player Role</string>
+    <string name="captain">Captain</string>
+    <string name="vice_captain">Vice-Captain</string>
+
+    <string name="kid">Kid</string>
+
+
+
+
+
+
+
+
+
 
 
 </resources>

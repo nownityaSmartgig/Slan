@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_silver"
+                android:layout_marginTop="9dp"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/text_detail_orange_large"
+                android:layout_marginTop="18dp"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_amt_paid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/text_detail_orange_large"
+                android:text="@string/amount_paid"
+                android:layout_marginStart="136dp"
+                app:layout_constraintStart_toEndOf="@id/tv_status"
+                app:layout_constraintTop_toTopOf="@id/tv_status"
+                app:layout_constraintBottom_toBottomOf="@id/tv_status"
+
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/amt_tobe_paid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amount_remaining"
+                style="@style/text_detail_orange_large"
+                android:layout_marginStart="42dp"
+                app:layout_constraintStart_toEndOf="@id/tv_amt_paid"
+                app:layout_constraintTop_toTopOf="@id/tv_amt_paid"
+                app:layout_constraintBottom_toBottomOf="@id/tv_amt_paid"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_silver"
+                android:layout_marginTop="9dp"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_status"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="27dp"
+                style="@style/text_heading"
+                android:textStyle="normal"
+                android:text="@string/player_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_status"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_amt_paid_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amount_paid_details"
+                style="@style/text_heading"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@id/tv_amt_paid"
+                app:layout_constraintTop_toTopOf="@id/tv_player_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_player_name"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/amt_tobe_paid_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amount_tobe_paid_details"
+                style="@style/text_heading"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@id/amt_tobe_paid"
+                app:layout_constraintTop_toTopOf="@id/tv_amt_paid_details"
+                app:layout_constraintBottom_toBottomOf="@id/tv_amt_paid_details"
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

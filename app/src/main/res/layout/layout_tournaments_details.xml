@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="15dp"
+        android:backgroundTint="@color/cultured">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_tournament_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tournament_full_name"
+                style="@style/text_heading"
+                android:textSize="12sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="@string/open"
+                style="@style/text_details"
+                android:textAllCaps="false"
+                android:layout_marginStart="30dp"
+                app:cornerRadius="10dp"
+                android:backgroundTint="@color/light_silver"
+                app:layout_constraintStart_toEndOf="@id/tv_tournament_name"
+                app:layout_constraintTop_toTopOf="@id/tv_tournament_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_tournament_name"
+
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                style="@style/text_detail_orange"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tournament_name"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/text_detail_orange"
+                android:text="@string/duration"
+                android:layout_marginStart="40dp"
+                app:layout_constraintStart_toEndOf="@id/tv_location"
+                app:layout_constraintTop_toTopOf="@id/tv_location"
+                app:layout_constraintBottom_toBottomOf="@id/tv_location"/>
+
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_team_count"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_marginStart="100dp"
+                android:text="@string/team_count"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/circular_team_count"
+                style="@style/text_detail_orange"
+                app:layout_constraintStart_toEndOf="@id/tv_duration"
+                app:layout_constraintTop_toTopOf="@id/tv_duration"
+                app:layout_constraintBottom_toBottomOf="@id/tv_duration"/>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_location_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location_name"
+                style="@style/text_heading"
+                android:textSize="10sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_location"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_event_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_date"
+                style="@style/text_heading"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@id/tv_duration"
+                app:layout_constraintTop_toTopOf="@id/tv_location_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_location_name"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_teams"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/teams"
+                style="@style/text_heading"
+                android:textSize="12sp"
+                android:layout_marginTop="13dp"
+                app:layout_constraintStart_toStartOf="@id/tv_team_count"
+                app:layout_constraintEnd_toEndOf="@id/tv_team_count"
+                app:layout_constraintTop_toBottomOf="@id/tv_team_count"
+
+
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

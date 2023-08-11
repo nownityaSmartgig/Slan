@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_sport_name"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        style="@style/text_details"
+        android:text="@string/event_name_details"
+        android:maxLines="2"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/bluebonnet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_participants_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/participants_details"
+        style="@style/text_details"
+
+        android:textColor="@color/bluebonnet"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toEndOf="@id/tv_sport_name"
+        app:layout_constraintTop_toTopOf="@id/tv_sport_name"
+        app:layout_constraintBottom_toBottomOf="@id/tv_sport_name"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/amount_paid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amount_paid_details"
+        style="@style/text_heading"
+        android:layout_marginStart="80dp"
+        app:layout_constraintStart_toEndOf="@id/tv_participants_count"
+        app:layout_constraintTop_toTopOf="@id/tv_participants_count"
+        app:layout_constraintBottom_toBottomOf="@id/tv_participants_count"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_schedule"
+        style="@style/text_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="55dp"
+        android:text="@string/schedule_details"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/amount_paid"
+        app:layout_constraintStart_toEndOf="@id/amount_paid"
+        app:layout_constraintTop_toTopOf="@id/amount_paid"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_schedule"
+        android:layout_marginTop="5dp"
+        android:background="@color/light_silver"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="167dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginHorizontal="16dp"
+        android:elevation="15dp"
+        app:cardElevation="2dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/text_heading"
+                android:layout_marginTop="10dp"
+                android:text="@string/tournament_full_name_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_team_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="57dp"
+                android:text="@string/team_1"
+                style="@style/text_heading"
+                android:textSize="20sp"
+                android:drawablePadding="5dp"
+                android:drawableEnd="@drawable/ic_check_mark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_vs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vs"
+                style="@style/text_detail_orange_large"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginStart="70dp"
+                app:layout_constraintStart_toEndOf="@id/tv_team_1"
+                app:layout_constraintTop_toTopOf="@id/tv_team_1"
+                app:layout_constraintBottom_toBottomOf="@id/tv_team_1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_team_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/team_2"
+                android:textSize="20sp"
+                style="@style/text_heading"
+                android:layout_marginStart="99dp"
+                android:layout_marginEnd="29dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_vs"
+                app:layout_constraintTop_toTopOf="@id/tv_vs"
+                app:layout_constraintBottom_toBottomOf="@id/tv_vs"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_match_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/match_no"
+                style="@style/text_details"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@id/tv_vs"
+                app:layout_constraintEnd_toEndOf="@id/tv_vs"
+                app:layout_constraintTop_toBottomOf="@id/tv_vs"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_match_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/match_location"
+                style="@style/text_details"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="@id/tv_match_no"
+                app:layout_constraintEnd_toEndOf="@id/tv_match_no"
+                app:layout_constraintTop_toBottomOf="@id/tv_match_no"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_match_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/match_time"
+                style="@style/text_details"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="@id/tv_match_location"
+                app:layout_constraintEnd_toEndOf="@id/tv_match_location"
+                app:layout_constraintTop_toBottomOf="@id/tv_match_location"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.tournaments.AllTournamentsFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_tournament"
+        android:layout_width="0dp"
+        android:layout_height="27dp"
+        android:text="@string/tournaments"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/button_left_curve"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/bt_league"
+        />
 
-</FrameLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_league"
+        android:layout_width="0dp"
+        android:layout_height="27dp"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_right_curve"
+        android:text="@string/leagues"
+        app:layout_constraintTop_toTopOf="@id/bt_tournament"
+        app:layout_constraintStart_toEndOf="@id/bt_tournament"
+        app:layout_constraintBottom_toBottomOf="@id/bt_tournament"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_current_sport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_tournament">
+
+        <TextView
+            android:id="@+id/tv_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:drawablePadding="11dp"
+            android:drawableEnd="@drawable/ic_down_arrow_orange"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/current"
+            android:fontFamily="@font/ubuntu_regular"/>
+
+
+        <TextView
+            android:id="@+id/tv_sport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:drawableEnd="@drawable/ic_down_arrow_orange"
+            android:drawablePadding="11dp"
+            android:text="@string/sport"
+            android:textSize="15sp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_periwinkle"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_current_sport"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tournament_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="8dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:itemCount="12"
+        tools:listitem="@layout/rv_layout_tournaments_list"
+        app:layout_constraintTop_toBottomOf="@id/view_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
