@@ -9,7 +9,7 @@
 
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_coupan"
+        android:id="@+id/tv_coupon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/coupon"
@@ -26,7 +26,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginHorizontal="16dp"
         android:background="@color/light_silver"
-        app:layout_constraintTop_toBottomOf="@id/tv_coupan"
+        app:layout_constraintTop_toBottomOf="@id/tv_coupon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -38,12 +38,12 @@
         android:layout_marginTop="15dp"
         tools:itemCount="1"
         tools:listitem="@layout/rv_layout_coupon_list"
-        app:layout_constraintTop_toBottomOf="@id/tv_coupan"
+        app:layout_constraintTop_toBottomOf="@id/tv_coupon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_coupan_list"
+            android:id="@+id/rv_coupon_list"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
@@ -51,7 +51,7 @@
             tools:itemCount="2"
             app:layoutManager="LinearLayoutManager"
             tools:listitem="@layout/rv_layout_coupon_list"
-            app:layout_constraintTop_toBottomOf="@id/tv_coupan"
+            app:layout_constraintTop_toBottomOf="@id/tv_coupon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_sports_name"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:background="@color/anti_flash_white"
+        android:fontFamily="@font/ubuntu_bold"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:text="Text View"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04136253" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.624" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.765" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/anti_flash_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_sports_name" />
+
+
+    <View
+        android:id="@+id/view_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/anti_flash_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_1" />
+
+    <TextView
+        android:id="@+id/tv_status_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Status"
+        android:textColor="@color/orange_red"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/view_2"
+        app:layout_constraintStart_toEndOf="@id/guideline_1"
+        app:layout_constraintTop_toBottomOf="@id/view_1" />
+
+    <TextView
+        android:id="@+id/tv_amt_paid_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Amt.Paid"
+        android:textColor="@color/orange_red"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/view_2"
+        app:layout_constraintStart_toEndOf="@id/guideline_2"
+        app:layout_constraintTop_toBottomOf="@id/view_1" />
+
+    <TextView
+        android:id="@+id/tv_amt_to_be_paid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Amt to bePaid"
+        android:textColor="@color/orange_red"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/view_2"
+        app:layout_constraintEnd_toStartOf="@id/guideline_5"
+        app:layout_constraintTop_toBottomOf="@id/view_1" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_2">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_sportsStausInner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="false"
+            android:scrollbars="none"
+            android:visibility="visible"
+            app:guidelineUseRtl="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="1"
+            tools:listitem="@layout/rv_layout_pd_game_list"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

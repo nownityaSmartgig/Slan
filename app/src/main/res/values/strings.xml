@@ -82,7 +82,7 @@
 
 
     //payment details
-    <string name="coupan">Coupan</string>
+    <string name="coupon">Coupon</string>
     <string name="geography">Geography</string>
     <string name="payment_mode">Payment Mode</string>
     <string name="status">Status</string>
