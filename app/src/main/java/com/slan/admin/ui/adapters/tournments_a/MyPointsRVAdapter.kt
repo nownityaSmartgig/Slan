@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.slan.admin.data.model.PointListData
+import com.slan.admin.data.model.DPointListData
 import com.slan.admin.databinding.RvLayoutPointsTableBinding
 
-class MyPointsRVAdapter:ListAdapter<PointListData,MyPointsRVAdapter.MyPointsViewHolder>(MyPointsDiffUtillCallBack()) {
+class MyPointsRVAdapter:ListAdapter<DPointListData,MyPointsRVAdapter.MyPointsViewHolder>(MyPointsDiffUtillCallBack()) {
     class MyPointsViewHolder (private val binding: RvLayoutPointsTableBinding):RecyclerView.ViewHolder(binding.root){
-        fun bind(item:PointListData){
+        fun bind(item:DPointListData){
            binding.tvUsername.text==item.UserName
             binding.tvPlayedMatchesCount.text=item.TotalPlayedMatches
             binding.tvWinMatchesCount.text=item.MatchesWin
@@ -31,12 +31,12 @@ class MyPointsRVAdapter:ListAdapter<PointListData,MyPointsRVAdapter.MyPointsView
     }
 }
 
-class MyPointsDiffUtillCallBack:DiffUtil.ItemCallback<PointListData> (){
-    override fun areItemsTheSame(oldItem: PointListData, newItem: PointListData): Boolean {
+class MyPointsDiffUtillCallBack:DiffUtil.ItemCallback<DPointListData> (){
+    override fun areItemsTheSame(oldItem: DPointListData, newItem: DPointListData): Boolean {
         return oldItem.UserName == newItem.UserName
     }
 
-    override fun areContentsTheSame(oldItem: PointListData, newItem: PointListData): Boolean {
+    override fun areContentsTheSame(oldItem: DPointListData, newItem: DPointListData): Boolean {
         return oldItem==newItem
     }
 

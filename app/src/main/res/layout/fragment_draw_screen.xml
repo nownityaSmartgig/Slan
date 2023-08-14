@@ -132,10 +132,10 @@
             android:layout_width="0dp"
             android:layout_height="24dp"
             android:layout_marginTop="14dp"
-            android:background="@drawable/button_left_curve"
+            android:background="@drawable/orange_left"
             android:text="@string/draw"
             android:textAllCaps="false"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="normal"
             app:layout_constraintEnd_toStartOf="@id/bt_schedules"
             app:layout_constraintStart_toStartOf="@id/tv_sport"
@@ -173,7 +173,7 @@
             app:layout_constraintTop_toTopOf="@id/bt_schedules" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_round_one"
+            android:id="@+id/cl_draw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -196,6 +196,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
+            android:layout_marginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -214,6 +215,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
+            android:layout_marginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
