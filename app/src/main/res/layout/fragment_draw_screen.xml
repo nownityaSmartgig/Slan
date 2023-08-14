@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,219 +7,229 @@
     tools:context=".ui.fragment.tournaments.DrawScreenFragment">
 
 
-
-    <androidx.core.widget.NestedScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
         >
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_tournament_name"
+            style="@style/text_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:text="@string/tournament_full_name"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_location_name"
+            style="@style/text_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/location_name"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tv_tournament_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_tournament_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_my_events"
+            style="@style/text_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="39.64dp"
+            android:text="@string/my_events"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tv_location_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_location_name" />
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8.1dp"
+            android:background="@color/light_silver"
+            app:layout_constraintStart_toStartOf="@id/tv_my_events"
+            app:layout_constraintTop_toBottomOf="@id/tv_my_events" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_events_heading"
+            style="@style/text_detail_orange_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/events_heading"
+            app:layout_constraintStart_toStartOf="@id/tv_my_events"
+            app:layout_constraintTop_toBottomOf="@id/tv_my_events" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_participant_heading"
+            style="@style/text_detail_orange_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:text="@string/participants_heading"
+            app:layout_constraintBottom_toBottomOf="@id/tv_events_heading"
+            app:layout_constraintStart_toEndOf="@id/tv_events_heading"
+            app:layout_constraintTop_toTopOf="@id/tv_events_heading" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_action"
+            style="@style/text_detail_orange_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="83dp"
+            android:text="@string/action_heading"
+            app:layout_constraintBottom_toBottomOf="@id/tv_participant_heading"
+            app:layout_constraintStart_toEndOf="@id/tv_participant_heading"
+            app:layout_constraintTop_toTopOf="@id/tv_participant_heading" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/light_silver"
+            app:layout_constraintStart_toStartOf="@id/tv_events_heading"
+            app:layout_constraintTop_toBottomOf="@id/tv_events_heading" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_layout_my_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_events_heading"
+            tools:itemCount="1"
+            tools:listitem="@layout/rv_layout_events_list" />
 
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_tournament_name"
-                style="@style/text_heading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="14dp"
-                android:text="@string/tournament_full_name"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_sport"
+            style="@style/text_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16.93dp"
+            android:drawableEnd="@drawable/ic_down_arrow_orange"
+            android:drawablePadding="10dp"
+            android:text="@string/sport"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_layout_my_events" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_location_name"
-                style="@style/text_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/location_name"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@id/tv_tournament_name"
-                app:layout_constraintTop_toBottomOf="@id/tv_tournament_name" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_draw"
+            style="@style/text_heading_small"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/button_left_curve"
+            android:text="@string/draw"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toStartOf="@id/bt_schedules"
+            app:layout_constraintStart_toStartOf="@id/tv_sport"
+            app:layout_constraintTop_toBottomOf="@id/tv_sport" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_my_events"
-                style="@style/text_heading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="39.64dp"
-                android:text="@string/my_events"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@id/tv_location_name"
-                app:layout_constraintTop_toBottomOf="@id/tv_location_name" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_schedules"
+            style="@style/text_heading_small"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:background="@drawable/button_rectangular_orange_border"
+            android:text="@string/schedule"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@id/bt_draw"
+            app:layout_constraintEnd_toStartOf="@id/bt_points"
+            app:layout_constraintStart_toEndOf="@id/bt_draw"
+            app:layout_constraintTop_toTopOf="@id/bt_draw" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8.1dp"
-                android:background="@color/light_silver"
-                app:layout_constraintStart_toStartOf="@id/tv_my_events"
-                app:layout_constraintTop_toBottomOf="@id/tv_my_events" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_points"
+            style="@style/text_heading_small"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_right_curve_orange_border"
+            android:text="@string/points"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@id/bt_schedules"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bt_schedules"
+            app:layout_constraintTop_toTopOf="@id/bt_schedules" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_events_heading"
-                style="@style/text_detail_orange_large"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="@string/events_heading"
-                app:layout_constraintStart_toStartOf="@id/tv_my_events"
-                app:layout_constraintTop_toBottomOf="@id/tv_my_events" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_round_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_participant_heading"
-                style="@style/text_detail_orange_large"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="88dp"
-                android:text="@string/participants_heading"
-                app:layout_constraintBottom_toBottomOf="@id/tv_events_heading"
-                app:layout_constraintStart_toEndOf="@id/tv_events_heading"
-                app:layout_constraintTop_toTopOf="@id/tv_events_heading" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_action"
-                style="@style/text_detail_orange_large"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="83dp"
-                android:text="@string/action_heading"
-                app:layout_constraintBottom_toBottomOf="@id/tv_participant_heading"
-                app:layout_constraintStart_toEndOf="@id/tv_participant_heading"
-                app:layout_constraintTop_toTopOf="@id/tv_participant_heading" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="6dp"
-                android:background="@color/light_silver"
-                app:layout_constraintStart_toStartOf="@id/tv_events_heading"
-                app:layout_constraintTop_toBottomOf="@id/tv_events_heading" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_layout_my_events"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="17dp"
-                tools:itemCount="1"
-                app:layoutManager="LinearLayoutManager"
-                tools:listitem="@layout/rv_layout_events_list"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_events_heading" />
-
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_sport"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/text_heading"
-                android:textSize="16sp"
-                android:textStyle="normal"
-                android:text="@string/sport"
-                android:drawablePadding="10dp"
-                android:drawableEnd="@drawable/ic_down_arrow_orange"
-                android:layout_marginTop="16.93dp"
-                android:layout_marginStart="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_layout_my_events"
-                />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bt_draw"
-                android:layout_width="0dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="14dp"
-                android:text="@string/draw"
-                style="@style/text_heading_small"
-                android:textAllCaps="false"
-                android:textStyle="normal"
-                android:textColor="@color/black"
-                android:background="@drawable/button_left_curve"
-                app:layout_constraintTop_toBottomOf="@id/tv_sport"
-                app:layout_constraintStart_toStartOf="@id/tv_sport"
-                app:layout_constraintEnd_toStartOf="@id/bt_schedules"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bt_schedules"
-                android:layout_width="0dp"
-                android:layout_height="24dp"
-                android:text="@string/schedule"
-                style="@style/text_heading_small"
-                android:textAllCaps="false"
-                android:textStyle="normal"
-                android:textColor="@color/black"
-                android:background="@drawable/button_rectangular_orange_border"
-                app:layout_constraintTop_toTopOf="@id/bt_draw"
-                app:layout_constraintStart_toEndOf="@id/bt_draw"
-                app:layout_constraintEnd_toStartOf="@id/bt_points"
-                app:layout_constraintBottom_toBottomOf="@id/bt_draw"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bt_points"
-                android:layout_width="0dp"
-                android:layout_height="24dp"
-                android:text="@string/points"
-                style="@style/text_heading_small"
-                android:layout_marginEnd="16dp"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textStyle="normal"
-                android:background="@drawable/button_right_curve_orange_border"
-                app:layout_constraintTop_toTopOf="@id/bt_schedules"
-                app:layout_constraintStart_toEndOf="@id/bt_schedules"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/bt_schedules"
-                />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_draw">
 
             <include
                 android:id="@+id/layout_draw"
                 layout="@layout/layout_draw"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bt_draw"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                android:layout_height="wrap_content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_schedules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_draw">
 
             <include
                 android:id="@+id/layout_schedules"
                 layout="@layout/layout_schedules"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bt_draw"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                android:layout_marginTop="15dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_draw">
 
             <include
                 android:id="@+id/layout_points"
                 layout="@layout/layout_points"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bt_draw"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                android:layout_marginTop="15dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

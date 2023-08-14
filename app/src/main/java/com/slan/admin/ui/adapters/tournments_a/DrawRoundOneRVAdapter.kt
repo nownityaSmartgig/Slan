@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.slan.admin.data.model.MatchesListData
 import com.slan.admin.databinding.RvLayoutRound1Binding
 
-class DrawRoundOneRVAdapter:ListAdapter<MatchesListData,DrawRoundOneRVAdapter.DrawRoundOneViewHolder>(DrawRoundOneDiffUtillCallBack()) {
+class DrawRoundOneRVAdapter:ListAdapter<MatchesListData,DrawRoundOneRVAdapter.DrawRoundOneViewHolder>(DrawRoundOneDiffUtilCallBack()) {
     class DrawRoundOneViewHolder(private val binding:RvLayoutRound1Binding):RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MatchesListData) {
             binding.tvPlayer1.text=item.players[0].player_1
@@ -31,7 +31,7 @@ class DrawRoundOneRVAdapter:ListAdapter<MatchesListData,DrawRoundOneRVAdapter.Dr
 
 }
 
-class DrawRoundOneDiffUtillCallBack : DiffUtil.ItemCallback<MatchesListData> (){
+class DrawRoundOneDiffUtilCallBack : DiffUtil.ItemCallback<MatchesListData> (){
     override fun areItemsTheSame(oldItem: MatchesListData, newItem: MatchesListData): Boolean {
         return oldItem.players==newItem.players
     }

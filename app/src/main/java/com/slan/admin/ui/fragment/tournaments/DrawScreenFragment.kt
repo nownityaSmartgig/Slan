@@ -13,8 +13,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.slan.admin.R
+import com.slan.admin.data.model.MatchesListData
+import com.slan.admin.data.source.local.MatchesDataSource
 import com.slan.admin.databinding.DialogBoxSportTypesBinding
 import com.slan.admin.databinding.FragmentDrawScreenBinding
+import com.slan.admin.ui.adapters.tournments_a.DrawRoundOneRVAdapter
 
 class DrawScreenFragment:Fragment() {
 
@@ -36,6 +39,45 @@ class DrawScreenFragment:Fragment() {
         binding.tvSport.setOnClickListener {
             showDialogSportSelection()
         }
+
+        val round1Adapter = DrawRoundOneRVAdapter()
+        val dataSource = MatchesDataSource().loadMatchesDataSource()
+        binding.layoutDraw.rvRoundOnePlayers.adapter = round1Adapter
+
+        round1Adapter.submitList(dataSource)
+
+
+        val checkItem = binding.layoutDraw
+        binding.layoutDraw.rgRadioGroup.setOnCheckedChangeListener { radioGroup , id ->
+
+            when (id) {
+                R.id.rv_round1 -> {
+
+
+
+                    checkItem.clRoundOne.visibility = View.VISIBLE
+                    checkItem.clQualifier.visibility = View.GONE
+                    checkItem.clFinal.visibility = View.GONE
+
+                }
+
+                R.id.rv_qualify -> {
+                    checkItem.clRoundOne.visibility = View.GONE
+                    checkItem.clQualifier.visibility = View.VISIBLE
+                    checkItem.clFinal.visibility = View.GONE
+
+                }
+
+                R.id.rv_final -> {
+                    checkItem.clRoundOne.visibility = View.GONE
+                    checkItem.clQualifier.visibility = View.GONE
+                    checkItem.clFinal.visibility = View.VISIBLE
+
+                }
+            }
+        }
+
+
 
         binding.btDraw.setOnClickListener {
             binding.layoutDraw.root.visibility=View.VISIBLE
