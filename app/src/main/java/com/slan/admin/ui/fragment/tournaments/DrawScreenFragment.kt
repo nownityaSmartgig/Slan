@@ -13,12 +13,15 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.slan.admin.R
+import com.slan.admin.data.source.local.DMyEventsDataSource
 import com.slan.admin.databinding.DialogBoxSportTypesBinding
 import com.slan.admin.databinding.FragmentDrawScreenBinding
+import com.slan.admin.ui.adapters.tournments_a.DMyEventsRVAdapter
 
 class DrawScreenFragment:Fragment() {
 
     private lateinit var binding: FragmentDrawScreenBinding
+    private val dMyEventsRVAdapter=DMyEventsRVAdapter()
 
 
     override fun onCreateView(
@@ -32,6 +35,10 @@ class DrawScreenFragment:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.rvLayoutMyEvents.adapter=dMyEventsRVAdapter
+        val dataSource=DMyEventsDataSource().loadDMyEventsDataSource()
+        dMyEventsRVAdapter.submitList(dataSource)
 
         binding.tvSport.setOnClickListener {
             showDialogSportSelection()

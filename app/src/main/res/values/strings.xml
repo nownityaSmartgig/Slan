@@ -102,7 +102,7 @@ Abc12330</string>
 
 
     <string name="payment_method">Payment Method</string>
-    <string name="payment_msg">Paid Via UPI Received on 13/07/2023 paid for 4 members</string>
+    <string name="payment_msg">Paid Via UPI\nReceived on 13/07/2023 \npaid for 4 members</string>
 
     //All events
     <string name="date">Date</string>

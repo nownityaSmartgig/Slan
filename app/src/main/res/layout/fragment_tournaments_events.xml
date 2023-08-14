@@ -109,7 +109,7 @@
                 style="@style/text_detail_orange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="22dp"
+                android:layout_marginStart="37dp"
                 android:text="@string/schedule_heading"
                 app:layout_constraintBottom_toBottomOf="@id/tv_total_amount_paid"
                 app:layout_constraintStart_toEndOf="@id/tv_total_amount_paid"

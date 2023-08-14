@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.slan.admin.R
 import com.slan.admin.data.source.local.CouponCodeDataSource
+import com.slan.admin.data.source.local.DialogGeographyDataSource
 import com.slan.admin.data.source.local.PDSportsDataSource
 import com.slan.admin.databinding.DialogBoxCouponBinding
 import com.slan.admin.databinding.DialogBoxGeographyBinding
 import com.slan.admin.databinding.DialogBoxPaymentMethodBinding
 import com.slan.admin.databinding.FragmentPaymentDetailsBinding
 import com.slan.admin.ui.adapters.tournments_a.DialogCouponCodeRVAdapter
+import com.slan.admin.ui.adapters.tournments_a.DialogGeographyRVAdapter
 import com.slan.admin.ui.adapters.tournments_a.PdSportsHeadingOuterRVAdapter
 
 class PaymentDetailsFragment:Fragment() {
@@ -83,6 +85,12 @@ class PaymentDetailsFragment:Fragment() {
         val dialogBuilder = AlertDialog.Builder(requireContext() , R.style.CustomAlertDialogTheme)
             .setView(dialogBinding.root)
         val alertDialog = dialogBuilder.create()
+
+        val dialogGeographyAdapter=DialogGeographyRVAdapter()
+
+        val dialogSource=DialogGeographyDataSource().loadGeographyDataSource()
+        dialogBinding.rvGeographyList.adapter = dialogGeographyAdapter
+        dialogGeographyAdapter.submitList(dialogSource)
 
         dialogBinding.btnOk.setOnClickListener {
             alertDialog.dismiss()
