@@ -27,6 +27,7 @@ class DrawScreenFragment:Fragment() {
 
     private lateinit var binding: FragmentDrawScreenBinding
     private val dMyEventsRVAdapter= DMyEventsRVAdapter()
+    private var sportsType:String?=null
 
 
     override fun onCreateView(
@@ -157,11 +158,49 @@ class DrawScreenFragment:Fragment() {
         val dialogBuilder = AlertDialog.Builder(requireContext()).setView(dialogBinding.root)
         val alertDialog = dialogBuilder.create()
 
+        when(sportsType){
+            "All"->dialogBinding.radioAll.isChecked=true
+            "Tennis"->dialogBinding.radioTennis.isChecked=true
+            "Cricket"->dialogBinding.radioCricket.isChecked=true
+            "Football"->dialogBinding.radioFootball.isChecked=true
+            "Volleyball"->dialogBinding.radioVolleyball.isChecked=true
+        }
+
+        dialogBinding.radioAll.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                sportsType="All"
+            }
+        }
+        dialogBinding.radioTennis.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                sportsType="Tennis"
+            }
+        }
+        dialogBinding.radioCricket.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                sportsType="Cricket"
+            }
+        }
+        dialogBinding.radioFootball.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                sportsType="Football"
+            }
+        }
+        dialogBinding.radioVolleyball.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                sportsType="Volleyball"
+            }
+        }
+
         dialogBinding.btnOk.setOnClickListener{
-            val radioGroup: RadioGroup =dialogBinding.rgSportsType
-            val checkedRadioButtonId= radioGroup.checkedRadioButtonId
-            val checkedButton: RadioButton =dialogBinding.rgSportsType.findViewById(checkedRadioButtonId)
-            binding.tvSport.text=checkedButton.text.toString()
+//            val radioGroup: RadioGroup =dialogBinding.rgSportsType
+//            val checkedRadioButtonId= radioGroup.checkedRadioButtonId
+//            val checkedButton: RadioButton =dialogBinding.rgSportsType.findViewById(checkedRadioButtonId)
+//            binding.tvSport.text=checkedButton.text.toString()
+
+            if (!sportsType.isNullOrEmpty()) {
+                binding.tvSport.text=sportsType.toString()
+            }
 
             alertDialog.dismiss()
 

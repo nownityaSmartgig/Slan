@@ -54,7 +54,7 @@
                 android:checked="false"
                 android:buttonTint="@color/orange"
                 android:textColor="@color/orange"
-                android:text="All" />
+                android:text="@string/all" />
 
             <RadioButton
                 android:id="@+id/radio_current"
@@ -64,7 +64,7 @@
                 android:checked="false"
                 android:textSize="12sp"
                 android:buttonTint="@color/orange"
-                android:text="@string/kid" />
+                android:text="@string/current" />
         </RadioGroup>
 
     </LinearLayout>

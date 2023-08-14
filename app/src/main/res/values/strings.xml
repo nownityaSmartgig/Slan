@@ -175,6 +175,7 @@ Abc12330</string>
     <string name="time_and_date">Wed, 27 Jun 2023 -06:00 AM/Local</string>
     <string name="scores">Scores</string>
     <string name="match_and_groups">12 Match, Group A</string>
+    <string name="all">All</string>
 
 
 </resources>
