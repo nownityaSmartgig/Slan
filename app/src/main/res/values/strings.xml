@@ -70,7 +70,7 @@
     <string name="duration">Duration</string>
     <string name="team_count">0/100</string>
     <string name="location_name">Hyderabad</string>
-    <string name="event_date">24/06/2023-30/06/2023</string>
+    <string name="event_date">24/06/2023–30/06/2023</string>
     <string name="event_name_details">Badminton-Doubles</string>
     <string name="participants_details">1</string>
     <string name="amount_paid_details">299.00</string>
@@ -175,6 +175,11 @@ Abc12330</string>
     <string name="time_and_date">Wed, 27 Jun 2023 -06:00 AM/Local</string>
     <string name="scores">Scores</string>
     <string name="match_and_groups">12 Match, Group A</string>
+    <string name="team_members">Team Members</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="view_participants">View Participants</string>
+    <string name="vew_registrant_details">Vew Registrant Details</string>
+    <string name="view_participants_details">View Participants Details</string>
     <string name="all">All</string>
 
 

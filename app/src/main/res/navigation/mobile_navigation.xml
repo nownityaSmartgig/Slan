@@ -51,7 +51,7 @@
     <fragment
         android:id="@+id/teamMembersFragment"
         android:name="com.slan.admin.ui.fragment.teams.TeamMembersFragment"
-        android:label="Team Members"
+        android:label="@string/team_members"
         tools:layout="@layout/fragment_team_members" >
         <action
             android:id="@+id/action_teamMembersFragment_to_addTeamMemberFragment"
@@ -103,17 +103,17 @@
     <fragment
         android:id="@+id/paymentDetailsFragment"
         android:name="com.slan.admin.ui.fragment.tournaments.PaymentDetailsFragment"
-        android:label="Payment Details"
+        android:label="@string/payment_details"
         tools:layout="@layout/fragment_payment_details" />
     <fragment
         android:id="@+id/drawScreenFragment"
         android:name="com.slan.admin.ui.fragment.tournaments.DrawScreenFragment"
-        android:label="Draw"
+        android:label="@string/draw"
         tools:layout="@layout/fragment_draw_screen" />
     <fragment
         android:id="@+id/view_participantsFragment"
         android:name="com.slan.admin.ui.fragment.tournaments.ViewParticipantsFragment"
-        android:label="View Participants"
+        android:label="@string/view_participants"
         tools:layout="@layout/fragment_view_participants" >
 
         <action
@@ -126,16 +126,16 @@
     <fragment
         android:id="@+id/view_registrant_details"
         android:name="com.slan.admin.ui.fragment.tournaments.ViewRegistrantDetailsFragment"
-        android:label="Vew Registrant Details"
+        android:label="@string/vew_registrant_details"
         tools:layout="@layout/fragment_view_registrant_details" />
     <fragment
         android:id="@+id/viewParticipantsDetailsFragment"
         android:name="com.slan.admin.ui.fragment.tournaments.ViewParticipantsDetailsFragment"
-        android:label="View Participants Details"
+        android:label="@string/view_participants_details"
         tools:layout="@layout/fragment_view_participants_details" />
     <fragment
         android:id="@+id/schedulesFragment"
         android:name="com.slan.admin.ui.fragment.tournaments.SchedulesFragment"
-        android:label="fragment_schedules"
+        android:label="Schedules"
         tools:layout="@layout/fragment_schedules" />
 </navigation>
