@@ -37,7 +37,8 @@ class AllTeamsFragment : Fragment() , CustomCallBackInterface {
     private var originalList: List<AllTeamsListData> = emptyList()
 
     private var selectedPlayerType: String? = null
-    private var selectedSportsId: Int? = null
+//    private var selectedSportsId: Int? = null
+    private var selectedSportsId: String? = null
     private val adapter = SportsDialogRvAdapter(this)
 
 
@@ -113,7 +114,7 @@ class AllTeamsFragment : Fragment() , CustomCallBackInterface {
         val dialogView = dialogBoxBinding.root
         val dialogBox = Dialog(requireContext())
         dialogBox.setContentView(dialogView)
-
+        dialogBox.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         when (selectedPlayerType) {
             "All" -> dialogBoxBinding.rbAll.isChecked = true
@@ -141,7 +142,7 @@ class AllTeamsFragment : Fragment() , CustomCallBackInterface {
         dialogBoxBinding.tvBtOk.setOnClickListener {
             if (!selectedPlayerType.isNullOrEmpty()) {
                 binding.tvTypesFilter.text = selectedPlayerType.toString()
-                toastView(selectedPlayerType!!)
+//                toastView(selectedPlayerType!!)
 
             }
             dialogBox.dismiss()
@@ -165,15 +166,15 @@ class AllTeamsFragment : Fragment() , CustomCallBackInterface {
         dialogBox.setContentView(dialogView)
 
         // Load data from SportsDialogDataSource
-        val dataSource = SportsDialogDataSource().loadSportsDialogDataSource()
-
-        dialogBoxBinding.rvSportsList.adapter = adapter
-        val lastSelectedIndex = adapter.getSelectedId()
-        if (lastSelectedIndex != null) {
-            adapter.setSelectedItem(lastSelectedIndex)
-        }
-
-        adapter.submitList(dataSource)
+//        val dataSource = SportsDialogDataSource().loadSportsDialogDataSource()
+//
+//        dialogBoxBinding.rvSportsList.adapter = adapter
+//        val lastSelectedIndex = adapter.getSelectedId()
+//        if (lastSelectedIndex != null) {
+//            adapter.setSelectedItem(lastSelectedIndex)
+//        }
+//
+//        adapter.submitList(dataSource)
 
         // set the selected sports if  available
 //        selectedSportsId?.let {sportsId ->
@@ -181,29 +182,51 @@ class AllTeamsFragment : Fragment() , CustomCallBackInterface {
 
 //        }
 
+        when (selectedSportsId) {
+
+            "All" -> dialogBoxBinding.rbAll.isChecked = true
+            "Tennis" -> dialogBoxBinding.rbTennis.isChecked = true
+            "Cricket" -> dialogBoxBinding.rbCricket.isChecked = true
+            "Football" -> dialogBoxBinding.rbFootball.isChecked = true
+            "Volleyball" -> dialogBoxBinding.rbVolleyball.isChecked = true
+        }
+
+        dialogBoxBinding.rbAll.setOnCheckedChangeListener { _ , isChecked ->
+            if (isChecked) {
+                selectedSportsId = "All"
+            }
+        }
+
         dialogBoxBinding.tvBtOk.setOnClickListener {
 
             // Update the selected Sports Id
-            selectedSportsId = adapter.getSelectedId()
+//            selectedSportsId = adapter.getSelectedId()
 
 //            selectedSportsId?.let { sportsId ->
 //                adapter.setSelectedItem(sportsId)
 //            }
 
             // Using selectedSportsId to update the UI
-            val selectedSports = dataSource.find {
-                it.id == selectedSportsId
-            }
-
-            if (selectedSports != null) {
-                binding.tvSportsFilter.text = selectedSports.sportsName
-            } else {
-                binding.tvSportsFilter.text = "Sport"
-            }
+//            val selectedSports = dataSource.find {
+//                it.id == selectedSportsId
+//            }
+//
+//            if (selectedSports != null) {
+//                binding.tvSportsFilter.text = selectedSports.sportsName
+//            } else {
+//                binding.tvSportsFilter.text = "Sport"
+//            }
 
 //            binding.tvSportsFilter.text= selectedSports?.sportsName?:"Sport"
 
 //            toastView(selectedSports?.toString())
+
+
+            if (!selectedSportsId.isNullOrEmpty()) {
+                binding.tvTypesFilter.text = selectedSportsId.toString()
+//                toastView(selectedPlayerType!!)
+
+            }
 
             dialogBox.dismiss()
 

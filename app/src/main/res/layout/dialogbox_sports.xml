@@ -6,7 +6,7 @@
     android:elevation="20dp"
     android:background="@android:color/transparent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="20dp">
+    app:cardCornerRadius="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,21 +39,70 @@
             android:layout_width="0dp"
             android:layout_height="142dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="11dp"
             app:layout_constraintEnd_toEndOf="@id/view_1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_1"
 
             >
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_sportsList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="LinearLayoutManager"
-                tools:listitem="@layout/rv_dialogbox_sports"
-                tools:itemCount="8"
+            <!--For Dynamic List of Sports-->
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rv_sportsList"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                app:layoutManager="LinearLayoutManager"-->
+<!--                tools:listitem="@layout/rv_dialogbox_sports"-->
+<!--                tools:itemCount="8"-->
 
+<!--                />-->
+
+
+            <RadioButton
+                android:id="@+id/rb_all"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="@string/all"
+                android:fontFamily="@font/ubuntu_medium"
+                android:buttonTint="@color/orange"
                 />
+
+            <RadioButton
+                android:id="@+id/rb_tennis"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="@string/tennis"
+                android:fontFamily="@font/ubuntu_medium"
+                android:buttonTint="@color/orange"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_cricket"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="cricket"
+                android:fontFamily="@font/ubuntu_medium"
+                android:buttonTint="@color/orange"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_football"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="@string/football"
+                android:fontFamily="@font/ubuntu_medium"
+                android:buttonTint="@color/orange"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_volleyball"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="@string/all"
+                android:fontFamily="@font/ubuntu_medium"
+                android:buttonTint="@color/orange"
+                />
+
         </RadioGroup>
         <View
             android:id="@+id/view_2"
