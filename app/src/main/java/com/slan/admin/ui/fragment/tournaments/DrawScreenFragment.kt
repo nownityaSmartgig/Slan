@@ -58,7 +58,7 @@ class DrawScreenFragment:Fragment() {
 
 
         val checkItem = binding.layoutDraw
-        binding.layoutDraw.rgRadioGroup.setOnCheckedChangeListener { radioGroup , id ->
+        binding.layoutDraw.rgRadioGroup.setOnCheckedChangeListener { _ , id ->
 
             when (id) {
                 R.id.rv_round1 -> {

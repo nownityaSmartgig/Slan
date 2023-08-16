@@ -142,4 +142,11 @@
         <item name="android:background">@drawable/round_dialog_box</item>
     </style>
 
+
+
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@null</item>
+    </style>
+
 </resources>

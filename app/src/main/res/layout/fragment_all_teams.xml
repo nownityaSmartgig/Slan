@@ -22,6 +22,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
         app:iconifiedByDefault="false"
+        app:queryBackground="@android:color/transparent"
         android:background="@drawable/ic_outline_search_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
