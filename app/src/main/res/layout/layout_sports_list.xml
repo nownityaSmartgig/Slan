@@ -41,7 +41,7 @@
                 android:id="@+id/tv_sport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="10dp"
                 android:drawableEnd="@drawable/ic_down_arrow_orange"
                 android:drawablePadding="11dp"

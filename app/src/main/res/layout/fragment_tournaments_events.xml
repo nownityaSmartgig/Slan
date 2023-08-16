@@ -102,12 +102,13 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/event_name_heading"
-                    style="@style/text_detail_orange"
+                    android:fontFamily="@font/ubuntu_regular"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
                     android:text="@string/event_name_heading"
+                    android:textColor="@color/orange"
                     app:layout_constraintEnd_toEndOf="@id/guideline_2"
                     app:layout_constraintStart_toEndOf="@id/guideline_1"
                     app:layout_constraintTop_toBottomOf="@id/view_1" />
