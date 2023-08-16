@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
+import com.slan.admin.R
 import com.slan.admin.data.source.local.AllLeagueDataSource
 import com.slan.admin.data.source.local.AllTournamentDataSource
 import com.slan.admin.databinding.DialogBoxSelectOptionBinding
@@ -64,6 +66,12 @@ class AllTournamentsFragment : Fragment() {
         binding.btTournament.setOnClickListener{
             binding.layoutSportsList.clSportList.visibility=View.VISIBLE
             binding.layoutLeagueList.clLeagueList.visibility=View.GONE
+
+            binding.btTournament.setBackgroundResource(R.drawable.orange_left)
+            binding.btLeague.setBackgroundResource(R.drawable.orange_right_border)
+
+            binding.btTournament.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+            binding.btLeague.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
         }
 
         binding.layoutSportsList.tvCurrent.setOnClickListener {
@@ -77,6 +85,12 @@ class AllTournamentsFragment : Fragment() {
         binding.btLeague.setOnClickListener {
             binding.layoutSportsList.clSportList.visibility=View.GONE
             binding.layoutLeagueList.clLeagueList.visibility=View.VISIBLE
+
+            binding.btTournament.setBackgroundResource(R.drawable.orange_left_border)
+            binding.btLeague.setBackgroundResource(R.drawable.orange_right)
+
+            binding.btTournament.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            binding.btLeague.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
 
         }
 
