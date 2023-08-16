@@ -1,18 +1,16 @@
 package com.slan.admin.ui.fragment.teams
 
-import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.text.TextUtils
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.slan.admin.R
 import com.slan.admin.data.source.local.AddTeamMemberDataSource
@@ -95,8 +93,7 @@ class AddTeamMemberFragment : Fragment() {
         val dialogView = dialogBoxBinding.root
         val dialogBox = Dialog(requireContext())
         dialogBox.setContentView(dialogView)
-        // For round corners.
-
+        // For round corners
         dialogBox.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         when (selectedPlayerRole) {
