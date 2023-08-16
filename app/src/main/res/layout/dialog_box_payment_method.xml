@@ -1,106 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/round_dialog_box"
     android:layout_width="249dp"
-    android:layout_height="160dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_dialog_box"
+    app:cardCornerRadius="22dp"
+
     >
-
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_geography_heading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/payment_method"
-        style="@style/text_heading"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="16dp"
-        android:background="@color/light_silver"
-        app:layout_constraintTop_toBottomOf="@id/tv_geography_heading"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_payment_msg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:lines="3"
-        android:maxLines="3"
-        android:layout_marginTop="18dp"
-        android:text="@string/payment_msg"
-        android:layout_marginHorizontal="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_geography_heading"/>
-
-
-    <View
-        android:id="@+id/view_2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="16dp"
-        android:background="@color/light_silver"
-        app:layout_constraintTop_toBottomOf="@id/tv_payment_msg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        app:layout_constraintTop_toBottomOf="@id/view_2">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_cancel"
-            android:textColor="@color/orange"
-            android:fontFamily="@font/ubuntu_regular"
-            android:textAllCaps="false"
-            android:textSize="10sp"
-            android:layout_width="0dp"
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_geography_heading"
+            style="@style/text_heading"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:text="Cancel"
+            android:layout_marginTop="16dp"
+            android:text="@string/payment_method"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_ok"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:id="@+id/view_3"
-            android:layout_width="1dp"
-            android:layout_height="15dp"
-            android:background="@color/light_gray"
-            app:layout_constraintStart_toStartOf="@id/btn_cancel"
-            app:layout_constraintEnd_toEndOf="@id/btn_ok"
-            app:layout_constraintTop_toTopOf="@id/btn_cancel"
-            app:layout_constraintBottom_toBottomOf="@id/btn_cancel"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/light_silver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_geography_heading" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_ok"
-            android:fontFamily="@font/ubuntu_regular"
-            android:textSize="10sp"
-            android:textColor="@color/orange"
-            android:textAllCaps="false"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_payment_msg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:text="Ok"
-            app:layout_constraintStart_toEndOf="@id/view_3"
-            app:layout_constraintTop_toTopOf="@id/view_3"
-            app:layout_constraintBottom_toBottomOf="@id/view_3"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="18dp"
+            android:lines="3"
+            android:maxLines="3"
+            android:text="@string/payment_msg"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_geography_heading" />
+
+
+        <View
+            android:id="@+id/view_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/light_silver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_payment_msg" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/orange"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toStartOf="@id/btn_ok"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_3"
+                android:layout_width="1dp"
+                android:layout_height="15dp"
+                android:background="@color/light_gray"
+                app:layout_constraintBottom_toBottomOf="@id/btn_cancel"
+                app:layout_constraintEnd_toEndOf="@id/btn_ok"
+                app:layout_constraintStart_toStartOf="@id/btn_cancel"
+                app:layout_constraintTop_toTopOf="@id/btn_cancel" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_ok"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="Ok"
+                android:textAllCaps="false"
+                android:textColor="@color/orange"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/view_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/view_3"
+                app:layout_constraintTop_toTopOf="@id/view_3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

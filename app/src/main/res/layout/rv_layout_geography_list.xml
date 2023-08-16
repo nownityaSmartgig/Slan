@@ -6,11 +6,12 @@
 
         <RadioButton
             android:id="@+id/tv_state"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/location_name_hyderabad"
             android:maxLines="2"
             android:buttonTint="@color/orange"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>

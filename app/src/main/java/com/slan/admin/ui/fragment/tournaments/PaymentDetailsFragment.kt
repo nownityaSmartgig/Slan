@@ -1,6 +1,9 @@
 package com.slan.admin.ui.fragment.tournaments
 
 import android.app.AlertDialog
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -59,9 +62,10 @@ class PaymentDetailsFragment:Fragment() {
 
     private fun showDialogCouponOption() {
         val dialogBinding = DialogBoxCouponBinding.inflate(LayoutInflater.from(requireContext()))
-        val dialogBuilder = AlertDialog.Builder(requireContext() , R.style.CustomAlertDialogTheme)
+        val dialogBuilder = AlertDialog.Builder(requireContext())
             .setView(dialogBinding.root)
         val alertDialog = dialogBuilder.create()
+        alertDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
 
         val dialogDatasource = CouponCodeDataSource().loadCouponCodeDataSource()
@@ -81,10 +85,13 @@ class PaymentDetailsFragment:Fragment() {
     }
 
     private fun showDialogGeographyOption() {
-        val dialogBinding = DialogBoxGeographyBinding.inflate(LayoutInflater.from(requireContext()))
-        val dialogBuilder = AlertDialog.Builder(requireContext() , R.style.CustomAlertDialogTheme)
-            .setView(dialogBinding.root)
-        val alertDialog = dialogBuilder.create()
+        val dialogBinding = DialogBoxGeographyBinding.inflate(layoutInflater)
+        val dialogView = dialogBinding.root
+        val dialogBox = Dialog(requireContext())
+        dialogBox.setContentView(dialogView)
+
+        dialogBox.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
 
         val dialogGeographyAdapter=DialogGeographyRVAdapter()
 
@@ -93,28 +100,30 @@ class PaymentDetailsFragment:Fragment() {
         dialogGeographyAdapter.submitList(dialogSource)
 
         dialogBinding.btnOk.setOnClickListener {
-            alertDialog.dismiss()
+            dialogBox.dismiss()
         }
         dialogBinding.btnCancel.setOnClickListener {
-            alertDialog.dismiss()
+            dialogBox.dismiss()
         }
-        alertDialog.show()
+        dialogBox.show()
     }
 
     private fun showDialogPaymentModeOption() {
         val dialogBinding =
-            DialogBoxPaymentMethodBinding.inflate(LayoutInflater.from(requireContext()))
-        val dialogBuilder = AlertDialog.Builder(requireContext() , R.style.CustomAlertDialogTheme)
-            .setView(dialogBinding.root)
-        val alertDialog = dialogBuilder.create()
+            DialogBoxPaymentMethodBinding.inflate(layoutInflater)
+        val dialogView = dialogBinding.root
+        val dialogBox = Dialog(requireContext())
+        dialogBox.setContentView(dialogView)
+
+        dialogBox.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         dialogBinding.btnOk.setOnClickListener {
-            alertDialog.dismiss()
+            dialogBox.dismiss()
         }
         dialogBinding.btnCancel.setOnClickListener {
-            alertDialog.dismiss()
+            dialogBox.dismiss()
         }
-        alertDialog.show()
+        dialogBox.show()
     }
 
 
