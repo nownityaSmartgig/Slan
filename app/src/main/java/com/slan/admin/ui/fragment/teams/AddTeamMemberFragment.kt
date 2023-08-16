@@ -95,7 +95,8 @@ class AddTeamMemberFragment : Fragment() {
         val dialogView = dialogBoxBinding.root
         val dialogBox = Dialog(requireContext())
         dialogBox.setContentView(dialogView)
-        // For round corners
+        // For round corners.
+
         dialogBox.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         when (selectedPlayerRole) {
