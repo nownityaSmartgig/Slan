@@ -4,70 +4,125 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <View
-        android:id="@+id/view_1"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_1"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="1dp"
-        android:background="@color/light_silver"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_begin="16dp"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_begin="117dp"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_begin="218dp"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_begin="239dp"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="272dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="311dp" />
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_event_name_details"
-        android:layout_width="59dp"
+        android:layout_width="0dp"
         android:layout_height="26dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="3dp"
         android:maxLines="2"
-        android:clickable="true"
         android:textSize="11sp"
         android:textColor="@color/black"
         android:text="@string/event_name_details"
-        style="@style/text_heading"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/view_1"/>
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toTopOf="@id/view_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_1"
+        app:layout_constraintEnd_toStartOf="@id/guideline_2"
+        />
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_participant_name_details"
-        android:layout_width="96dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
         android:maxLines="3"
-        style="@style/text_heading"
-        android:clickable="true"
         android:textSize="11sp"
+        android:fontFamily="@font/ubuntu_bold"
         android:textColor="@color/bluebonnet"
         android:text="@string/participants_name_details"
-        app:layout_constraintStart_toEndOf="@id/tv_event_name_details"
-        app:layout_constraintTop_toTopOf="@id/tv_event_name_details" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_2"
+        app:layout_constraintEnd_toStartOf="@id/guideline_3"
+        app:layout_constraintBottom_toTopOf="@id/view_1"
+        />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_date_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/text_heading"
         android:text="@string/date_details"
         android:textSize="11sp"
-        android:layout_marginStart="25dp"
-        app:layout_constraintStart_toEndOf="@id/tv_participant_name_details"
-        app:layout_constraintTop_toTopOf="@id/tv_participant_name_details"
+        android:fontFamily="@font/ubuntu_bold"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_4"
+        app:layout_constraintEnd_toEndOf="@id/guideline_5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view_1"
+
         />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_registrant_details"
-        style="@style/text_heading"
-        android:layout_width="96dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:layout_width="0dp"
+        android:layout_marginEnd="16dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:clickable="true"
         android:maxLines="3"
         android:text="@string/registrant_data"
         android:textColor="@color/bluebonnet"
         android:textSize="11sp"
-        app:layout_constraintStart_toEndOf="@id/tv_date_details"
-        app:layout_constraintTop_toTopOf="@id/tv_date_details" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintStart_toEndOf="@id/guideline_6"
+
+        />
 
 
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/light_silver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

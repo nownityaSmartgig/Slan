@@ -3,6 +3,8 @@ package com.slan.admin.ui.fragment.teams
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.text.TextUtils
@@ -93,6 +95,8 @@ class AddTeamMemberFragment : Fragment() {
         val dialogView = dialogBoxBinding.root
         val dialogBox = Dialog(requireContext())
         dialogBox.setContentView(dialogView)
+        // For round corners
+        dialogBox.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         when (selectedPlayerRole) {
             "Captain" -> dialogBoxBinding.rbCaptain.isChecked = true

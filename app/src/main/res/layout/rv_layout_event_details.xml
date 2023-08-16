@@ -35,115 +35,84 @@
                 app:layout_constraintGuide_begin="318dp" />
 
 
-<!--            <View-->
-<!--                android:id="@+id/view_2"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="1dp"-->
-<!--                android:layout_marginStart="16dp"-->
-<!--                android:layout_marginTop="4dp"-->
-<!--                android:background="@color/light_silver"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/eve" />-->
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_layout_events_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:itemCount="10"
-                tools:listitem="@layout/rv_layout_event_details" />
-
-
-
-        <!--            <androidx.recyclerview.widget.RecyclerView-->
-        <!--                android:id="@+id/rv_layout_events_list"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_marginEnd="16dp"-->
-        <!--                android:layout_marginTop="5dp"-->
-        <!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-        <!--                app:layout_constraintTop_toBottomOf="@id/event_name"-->
-        <!--                app:layout_constraintStart_toStartOf="@id/event_name"-->
-        <!--                app:layout_constraintEnd_toEndOf="parent"-->
-        <!--                tools:itemCount="10"-->
-        <!--                tools:listitem="@layout/rv_layout_event_details" />-->
-
-
-        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-
-
-
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_sport_name"
-        android:layout_width="59dp"
-        android:layout_height="wrap_content"
-
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/event_name_details"
         android:maxLines="2"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/ubuntu_regular"
         android:textSize="11sp"
+        android:layout_marginEnd="20dp"
         android:textColor="@color/bluebonnet"
-        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/guideline_1"
+        app:layout_constraintEnd_toStartOf="@id/guideline_2"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_participants_count"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/participants_details"
         android:fontFamily="@font/ubuntu_regular"
         android:textSize="11sp"
+        android:layout_marginEnd="20dp"
         android:gravity="center_vertical"
         android:textColor="@color/bluebonnet"
-        android:layout_marginStart="40dp"
-        app:layout_constraintStart_toEndOf="@id/tv_sport_name"
-        app:layout_constraintTop_toTopOf="@id/tv_sport_name"
-        app:layout_constraintBottom_toBottomOf="@id/tv_sport_name"/>
+        android:maxLines="1"
+        app:layout_constraintStart_toEndOf="@id/guideline_2"
+        app:layout_constraintEnd_toStartOf="@id/guideline_3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/amount_paid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
         android:text="@string/amount_paid_details"
         style="@style/text_heading"
-        android:layout_marginStart="80dp"
-        app:layout_constraintStart_toEndOf="@id/tv_participants_count"
-        app:layout_constraintTop_toTopOf="@id/tv_participants_count"
-        app:layout_constraintBottom_toBottomOf="@id/tv_participants_count"/>
+        android:layout_marginEnd="20dp"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@id/guideline_4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view_1"
+        app:layout_constraintStart_toEndOf="@id/guideline_3"
+
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bt_schedule"
         style="@style/text_heading"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginStart="55dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/schedule_details"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/amount_paid"
-        app:layout_constraintStart_toEndOf="@id/amount_paid"
-        app:layout_constraintTop_toTopOf="@id/amount_paid"
+        app:layout_constraintBottom_toTopOf="@id/view_1"
+        app:layout_constraintStart_toEndOf="@id/guideline_4"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <View
+        android:id="@+id/view_1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/light_silver"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bt_schedule"
-        android:layout_marginTop="5dp"
-        android:background="@color/light_silver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="2dp"
         />
 
 

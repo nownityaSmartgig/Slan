@@ -71,7 +71,7 @@
     <string name="team_count">0/100</string>
     <string name="location_name">Hyderabad</string>
     <string name="event_date">24/06/2023–30/06/2023</string>
-    <string name="event_name_details">Badminton-Doubles</string>
+    <string name="event_name_details">Badminton- Doubles</string>
     <string name="participants_details">1</string>
     <string name="amount_paid_details">299.00</string>
     <string name="schedule_heading">Schedule</string>
@@ -107,9 +107,7 @@ Abc12330</string>
     //All events
     <string name="date">Date</string>
     <string name="registrant_details">Registrant Details</string>
-    <string name="participants_name_details">Nakka arthav
-(7894561230)
-(DOB) May 04 1995</string>
+    <string name="participants_name_details">Nakka arthav\n(7894561230)\n(DOB) May 04 1995</string>
     <string name="date_details">JUL 04 2023</string>
     <string name="registrant_data">Nakka arthav
 (7894561230)

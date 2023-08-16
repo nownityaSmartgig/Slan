@@ -1,6 +1,8 @@
 package com.slan.admin.ui.fragment.teams
 
 import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -111,6 +113,7 @@ class AllTeamsFragment : Fragment() , CustomCallBackInterface {
         val dialogView = dialogBoxBinding.root
         val dialogBox = Dialog(requireContext())
         dialogBox.setContentView(dialogView)
+
 
         when (selectedPlayerType) {
             "All" -> dialogBoxBinding.rbAll.isChecked = true
