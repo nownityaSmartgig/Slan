@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+        binding.toolbar.elevation =0f
 
         val navView: BottomNavigationView = binding.navView
 
