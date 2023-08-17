@@ -254,7 +254,7 @@ class AllTournamentsFragment : Fragment() {
 //            binding.tvSport.text=checkedButton.text.toString()
 
             if (!sportsLeagueType.isNullOrEmpty()) {
-                binding.layoutSportsList.tvSport.text=sportsLeagueType.toString()
+                binding.layoutLeagueList.tvSport.text=sportsLeagueType.toString()
             }
 
             alertDialog.dismiss()
@@ -296,7 +296,7 @@ class AllTournamentsFragment : Fragment() {
 //            binding.tvCurrent.text=checkedButton.text.toString()
 
             if (!playerLeagueType.isNullOrEmpty()) {
-                binding.layoutSportsList.tvCurrent.text=playerLeagueType.toString()
+                binding.layoutLeagueList.tvCurrent.text=playerLeagueType.toString()
             }
 
 

@@ -53,7 +53,6 @@
                 android:textSize="12sp"
                 android:checked="false"
                 android:buttonTint="@color/orange"
-                android:textColor="@color/orange"
                 android:text="@string/all" />
 
             <RadioButton
